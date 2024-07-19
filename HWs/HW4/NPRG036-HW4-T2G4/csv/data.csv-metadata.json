@@ -1,0 +1,425 @@
+{
+    "@context": "http://www.w3.org/ns/csvw",
+    "@type": "TableGroup",
+    "@id": "http://nasesportoviste.cz/tableGroup",
+    "tables": [{
+        "url": "lokace.csv",
+        "@type": "Table",
+        "tableSchema": {
+          "@type": "Schema",
+            "aboutUrl": "{+uri}",
+            "columns": [
+              {
+                "@type": "Column",
+                "name": "uri",
+                "titles": "uri",
+                "required": true,
+                "datatype": "anyURI",
+                "propertyUrl": "rdf:type",
+                "valueUrl": "http://nasesportoviste.cz/lokace"
+            },
+              {
+                "@type": "Column",
+                "titles": "nazev",
+                "name": "nazev",
+                "datatype": "string",
+                "required": true,
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/nazev"
+            }, {
+                "@type": "Column",
+                "titles": "plocha",
+                "name": "plocha",
+                "datatype": "float",
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/plocha"
+            }, {
+                "@type": "Column",
+                "titles": "kapacita",
+                "name": "kapacita",
+                "datatype": "integer",
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/kapacita"
+            },{
+                "@type": "Column",
+                "titles": "kryti_uri",
+                "name": "kryti_uri",
+                "datatype": "anyURI",
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/kryje"
+            }, {
+                "@type": "Column",
+                "titles": "povrch_uri",
+                "name": "povrch_uri",
+                "datatype": "anyURI",
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/pokryta"
+            }],
+            "primaryKey": "uri",
+            "foreignKeys": [
+              {
+                "columnReference": "kryti_uri",
+                "reference": {
+                    "resource": "kryti.csv",
+                    "columnReference": "uri"
+                }
+              },{
+                "columnReference": "povrch_uri",
+                "reference": {
+                    "resource": "povrch.csv",
+                    "columnReference": "uri"
+                }
+              }
+          ]
+        }
+    }, {
+        "url": "kryti.csv",
+        "@type": "Table",
+        "tableSchema": {
+            "@type": "Schema",
+            "aboutUrl": "{+uri}",
+            "columns": [
+              {
+                "@type": "Column",
+                "name": "uri",
+                "titles": "uri",
+                "required": true,
+                "datatype": "anyURI",
+                "propertyUrl": "rdf:type",
+                "valueUrl": "http://nasesportoviste.cz/kryti"
+            },
+            {
+                "@type": "Column",
+                "titles": "nazev",
+                "name": "nazev",
+                "datatype": "string",
+                "required": true,
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/nazev"
+            }, {
+                "@type": "Column",
+                "titles": "popis",
+                "name": "popis",
+                "datatype": "string",
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/popis"
+            }, {
+                "@type": "Column",
+                "titles": "urovenKryti",
+                "name": "urovenKryti",
+                "datatype": "float",
+                "required": true,
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/urovenKryti"
+            }
+          ],
+            "primaryKey": "uri"
+        }
+    }, {
+        "url": "povrch.csv",
+        "@type": "Table",
+        "tableSchema": {
+            "aboutUrl": "{+uri}",
+            "columns": [{
+              "@type": "Column",
+              "name": "uri",
+              "titles": "uri",
+              "required": true,
+              "datatype": "anyURI",
+              "propertyUrl": "rdf:type",
+              "valueUrl": "http://nasesportoviste.cz/povrch"
+          }, {
+                "@type": "Column",
+                "titles": "nazev",
+                "name": "nazev",
+                "datatype": "string",
+                "required": true,
+                "propertyUrl": "http://nasesportoviste.cz/slovnik/nazev"
+            }
+          ],
+            "primaryKey": "uri"
+        }
+      },{
+          "url": "rozvrh.csv",
+          "@type": "Table",
+          "tableSchema": {
+              "aboutUrl": "{+uri}",
+              "columns": [{
+                "@type": "Column",
+                "name": "uri",
+                "titles": "uri",
+                "required": true,
+                "datatype": "anyURI",
+                "propertyUrl": "rdf:type",
+                "valueUrl": "http://nasesportoviste.cz/rozvrh"
+                }, {
+                  "@type": "Column",
+                  "titles": "den",
+                  "name": "den",
+                  "datatype": "integer",
+                  "required": true,
+                  "propertyUrl": "http://nasesportoviste.cz/slovnik/den"
+              }, {
+                  "@type": "Column",
+                  "titles": "od",
+                  "name": "od",
+                  "datatype": "time",
+                  "required": true,
+                  "propertyUrl": "http://nasesportoviste.cz/slovnik/od"
+              }, {
+                  "@type": "Column",
+                  "titles": "do",
+                  "name": "do",
+                  "datatype": "time",
+                  "required": true,
+                  "propertyUrl": "http://nasesportoviste.cz/slovnik/do"
+              }],
+              "primaryKey": "uri"
+          }
+      },{
+          "url": "udalost.csv",
+          "@type": "Table",
+          "tableSchema": {
+              "aboutUrl": "{+uri}",
+              "columns": [{
+                "@type": "Column",
+                "name": "uri",
+                "titles": "uri",
+                "required": true,
+                "datatype": "anyURI",
+                "propertyUrl": "rdf:type",
+                "valueUrl": "http://nasesportoviste.cz/udalost"
+                },{
+                      "@type": "Column",
+                      "titles": "nazev",
+                      "name": "nazev",
+                      "datatype": "string",
+                      "required": true,
+                      "propertyUrl": "http://nasesportoviste.cz/slovnik/nazev"
+                }, {
+                    "@type": "Column",
+                    "titles": "date",
+                    "name": "date",
+                    "datatype": "date",
+                    "required": true,
+                    "propertyUrl": "http://nasesportoviste.cz/slovnik/datum"
+                },{
+                  "@type": "Column",
+                  "titles": "od",
+                  "name": "od",
+                  "datatype": "time",
+                  "required": true,
+                  "propertyUrl": "http://nasesportoviste.cz/slovnik/od"
+              }, {
+                  "@type": "Column",
+                  "titles": "do",
+                  "name": "do",
+                  "datatype": "time",
+                  "required": true,
+                  "propertyUrl": "http://nasesportoviste.cz/slovnik/do"
+              },{
+                  "@type": "Column",
+                  "titles": "lokace_uri",
+                  "name": "lokace_uri",
+                  "datatype": "anyURI",
+                  "required": true,
+                  "propertyUrl": "http://nasesportoviste.cz/slovnik/konana"
+              }],
+              "primaryKey": "uri",
+              "foreignKeys": [{
+                  "columnReference": "lokace_uri",
+                  "reference": {
+                      "resource": "lokace.csv",
+                      "columnReference": "uri"
+                  }
+              }]
+          }
+      },{
+          "url": "organizovan.csv",
+          "@type": "Table",
+          "tableSchema": {
+              "columns": [{
+                  "@type": "Column",
+                  "titles": "udalost_uri",
+                  "name": "udalost_uri",
+                  "datatype": "anyURI",
+                  "required": true
+              }, {
+                  "@type": "Column",
+                  "titles": "zamestnanec_uri",
+                  "name": "zamestnanec_uri",
+                  "datatype": "anyURI",
+                  "required": true
+              }, {
+                "@type": "Column",
+                "virtual":true,
+                "propertyUrl": "http://nasesportoviste.cz/organizovan",
+                "aboutUrl": "{+udalost_uri}",
+                "valueUrl": "{+zamestnanec_uri}"
+                }],
+              "primaryKey": ["udalost_uri", "zamestnanec_uri"],
+              "foreignKeys": [{
+                  "columnReference": "udalost_uri",
+                  "reference": {
+                      "resource": "udalost.csv",
+                      "columnReference": "uri"
+                  }
+              }]
+          }
+      }, {
+          "url": "telefon.csv",
+          "@type": "Table",
+          "tableSchema": {
+              "columns": [{
+                  "@type": "Column",
+                  "titles": "osobniTelefon",
+                  "name": "osobniTelefon",
+                  "datatype": "string",
+                  "required": true,
+                  "propertyUrl": "http://nasesportoviste.cz/osobniTelefon",
+                  "aboutUrl": "{+osoba_uri}"
+              }, {
+                  "@type": "Column",
+                  "titles": "osoba_uri",
+                  "name": "osoba_uri",
+                  "datatype": "anyURI",
+                  "required": true
+              }],
+              "primaryKey": "osobniTelefon",
+              "foreignKeys": [{
+                  "columnReference": "osoba_uri",
+                  "reference": {
+                      "resource": "osoba.csv",
+                      "columnReference": "uri"
+                  }
+              }]
+          }
+      }, {
+          "url": "osoba.csv",
+          "@type": "Table",
+          "tableSchema": {
+              "aboutUrl": "{+uri}",
+              "columns": [{
+                "@type": "Column",
+                "name": "uri",
+                "titles": "uri",
+                "required": true,
+                "datatype": "anyURI",
+                "propertyUrl": "rdf:type",
+                "valueUrl": "http://nasesportoviste.cz/Osoba"
+                }, {
+                  "@type": "Column",
+                  "titles": "jmeno",
+                  "name": "jmeno",
+                  "datatype": "string",
+                  "required": true,
+                  "propertyUrl":"foaf:givenName"
+              }, {
+                  "@type": "Column",
+                  "titles": "prijmeni",
+                  "name": "prijmeni",
+                  "datatype": "string",
+                  "required": true,
+                  "propertyUrl":"foaf:familyName"
+              }],
+              "primaryKey": "uri"
+          }
+      }, {
+          "url": "zamestnanec.csv",
+          "@type": "Table",
+          "tableSchema": {
+              "aboutUrl": "{+osoba_uri}",
+              "columns": [{
+                "@type": "Column",
+                "name": "osoba_uri",
+                "titles": "osoba_uri",
+                "required": true,
+                "datatype": "anyURI",
+                "propertyUrl": "rdf:type",
+                "valueUrl": "http://nasesportoviste.cz/Zamestnanec"
+                }, {
+                  "@type": "Column",
+                  "titles": "pracovniTelefon",
+                  "name": "pracovniTelefon",
+                  "datatype": "string",
+                  "required": true,
+                  "propertyUrl":"http://nasesportoviste.cz/pracovniTelefon"
+              }, {
+                  "@type": "Column",
+                  "titles": "mzda",
+                  "name": "mzda",
+                  "datatype": "string",
+                  "required": true,
+                  "propertyUrl":"http://nasesportoviste.cz/mzda"
+              }, {
+                  "@type": "Column",
+                  "titles": "aktivni",
+                  "name": "aktivni",
+                  "datatype": "boolean",
+                  "required": true,
+                  "propertyUrl":"http://nasesportoviste.cz/aktivni"
+              }],
+              "primaryKey": "osoba_uri",
+              "foreignKeys": [{
+                  "columnReference": "osoba_uri",
+                  "reference": {
+                      "resource": "osoba.csv",
+                      "columnReference": "uri"
+                  }
+              }]
+          }
+      }, {
+          "url": "opravnen.csv",
+          "@type": "Table",
+          "tableSchema": {
+              "columns": [{
+                "@type": "Column",
+                "name": "osoba_uri",
+                "titles": "osoba_uri",
+                "required": true,
+                "datatype": "anyURI"
+                }, {
+                  "@type": "Column",
+                  "titles": "lokace_uri",
+                  "name": "lokace_uri",
+                  "datatype": "anyURI",
+                  "required": true
+              },{
+                "@type": "Column",
+                "virtual":true,
+                "aboutUrl": "{+osoba_uri}",
+                "propertyUrl":"http://nasesportoviste.cz/opravnen",
+                "valueUrl": "{+lokace_uri}"
+                }],
+              "primaryKey": ["lokace_uri", "osoba_uri"],
+              "foreignKeys": [{
+                  "columnReference": "osoba_uri",
+                  "reference": {
+                      "resource": "osoba.csv",
+                      "columnReference": "uri"
+                  }
+              }, {
+                  "columnReference": "lokace_uri",
+                  "reference": {
+                      "resource": "lokace.csv",
+                      "columnReference": "uri"
+                  }
+              }]
+          }
+      }, {"url": "sportovec.csv",
+      "@type": "Table",
+      "propertyUrl": "rdf:type",
+      "valueUrl": "http://nasesportoviste.cz/Sportovec",
+      "tableSchema": {
+        "columns": [{
+          "@type": "Column",
+          "name": "osoba_uri",
+          "titles": "osoba_uri",
+          "required": true,
+          "datatype": "anyURI",
+          "aboutUrl": "{+osoba_uri}"
+
+      }],
+      "foreignKeys": [{
+          "columnReference": "osoba_uri",
+          "reference": {
+              "resource": "osoba.csv",
+              "columnReference": "uri"
+          }
+      }]
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+'Součet všech nákladů na události, jež budou vyplaceny v BTC:'
+
+//fn:sum( /SportovníStředisko/DostupnéLokace/Lokace/Události/Událost/Organizátoři/Zaměstnanec/Mzda[@měna="BTC"] ! (@hodnota * (../../.. ! ((fn:minutes-from-duration(xs:time(Do) - xs:time(Od))  + (60*fn:hours-from-duration(xs:time(Do) - xs:time(Od)) ))))))

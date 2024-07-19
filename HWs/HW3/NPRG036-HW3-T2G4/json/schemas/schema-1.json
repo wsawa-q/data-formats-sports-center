@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/interval.schema.json",
+    "title": "Časový interval",
+    "description": "Časový interval od - do",
+    "type": "object",
+    "properties": {
+        "od": {
+            "type": "string",
+            "pattern": "^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$"
+        },
+        "do": {
+            "type": "string",
+            "pattern": "^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$"
+        }
+    },
+    "required": [
+        "od",
+        "do"
+    ]
+}

@@ -1,0 +1,1447 @@
+[
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "zam": "http://nasesportoviste.cz/zamestnanec/",
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "zam:3",
+        "@type": "sp:Zamestnance",
+        "sp:aktivni": false,
+        "sp:mzda": {
+            "@type": "xsd:decimal",
+            "@value": 50
+        },
+        "sp:pracovniTelefon": {
+            "@id": "tel:+380.97.514.63.00"
+        },
+        "foaf:familyName": {
+            "@language": "en",
+            "@value": "Dodoco"
+        },
+        "foaf:givenName": {
+            "@language": "en",
+            "@value": "Klee"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "proton": "http://www.ontotext.com/proton/protontop#"
+        },
+        "@id": "sp:Lokace",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "Místo, kde pracují zaměstnance a sportují sportovce, kde prochází různé události"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Lokace"
+        },
+        "rdfs:subClassOf": {
+            "@id": "proton:Location"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "kr": "http://nasesportoviste.cz/kryti/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "kr:2",
+        "@type": "sp:Kryti",
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Poloviční střecha"
+        },
+        "sp:popis": {
+            "@language": "cs",
+            "@value": "Nejlepší střecha na světě"
+        },
+        "sp:urovenKryti": {
+            "@type": "xsd:float",
+            "@value": 0.5
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "lok": "http://nasesportoviste.cz/lokace/",
+            "zam": "http://nasesportoviste.cz/zamestnanec/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "ud": "http://nasesportoviste.cz/udalost/"
+        },
+        "@id": "ud:3",
+        "@type": "sp:Udalost",
+        "sp:datum": {
+            "@type": "xsd:date",
+            "@value": "2022-03-01"
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "18:00:00"
+        },
+        "sp:lokace": {
+            "@id": "lok:2"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Velká událost 2"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "00:00:00"
+        },
+        "sp:organizovan": [
+            {
+                "@id": "zam:1"
+            },
+            {
+                "@id": "zam:2"
+            },
+            {
+                "@id": "zam:4"
+            }
+        ]
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "@id": "sp:aktivni",
+        "@type": "Property",
+        "rdfs:range": {
+            "@id": "xsd:boolean"
+        },
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "status zamestnance, pomocí kterého lze zjistit, zda právě pracuje a je fyzicky přítomen, neni na dovolené nebo služební cestě"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "aktivni"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "@id": "sp:mzda",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "měsíční mzda zaměstnance"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "mzda"
+        },
+        "rdf:range": {
+            "@id": "xsd:decimal"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "kr": "http://nasesportoviste.cz/kryti/"
+        },
+        "@id": "kr:3",
+        "@type": "sp:Kryti",
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Magická střecha"
+        },
+        "sp:popis": {
+            "@language": "cs",
+            "@value": "Je to magie no..."
+        },
+        "sp:urovenKryti": {
+            "@type": "xsd:float",
+            "@value": 0.0
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "ud": "http://nasesportoviste.cz/udalost/",
+            "lok": "http://nasesportoviste.cz/lokace/"
+        },
+        "@id": "ud:8",
+        "@type": "sp:Udalost",
+        "sp:datum": {
+            "@type": "xsd:date",
+            "@value": "2022-10-10"
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "15:00:00"
+        },
+        "sp:lokace": {
+            "@id": "lok:3"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Turnaj - Volejbal"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "12:30:00"
+        },
+        "sp:organizovan": [
+            {
+                "@id": "zam:1"
+            },
+            {
+                "@id": "zam:4"
+            }
+        ]
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "po": "http://nasesportoviste.cz/povrch/"
+        },
+        "@id": "po:2",
+        "@type": "sp:Povrch",
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Uměla trava"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+        },
+        "@id": "sp:do",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "čas, kdy něco končí"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "do"
+        },
+        "rdfs:subPropertyOf": {
+            "@id": "sp:cas"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro": "http://nasesportoviste.cz/rozvrch/",
+            "lok": "http://nasesportoviste.cz/lokace/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "kr": "http://nasesportoviste.cz/kryti/"
+        },
+        "@id": "lok:3",
+        "@type": "sp:Lokace",
+        "sp:kapacita": {
+            "@type": "xsd:unsignedInt",
+            "@value": 120
+        },
+        "sp:kryje": {
+            "@id": "kr:3"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Hřiště"
+        },
+        "sp:plocha": {
+            "@type": "xsd:float",
+            "@value": 500.0
+        },
+        "sp:povrch": {
+            "@id": "po:3"
+        },
+        "sp:rozvrh": [
+            {
+                "@id": "ro:10"
+            },
+            {
+                "@id": "ro:11"
+            }
+        ]
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "sport": "http://nasesportoviste.cz/sport/"
+        },
+        "@id": "sport:3",
+        "@type": "sp:Sportovec",
+        "sp:opravnen": {
+            "@id": "lok:1"
+        },
+        "sp:osobniTelefon": {
+            "@id": "tel:+420.159.753.123"
+        },
+        "foaf:familyName": {
+            "@language": "en",
+            "@value": "Arzumanyan"
+        },
+        "foaf:givenName": {
+            "@language": "en",
+            "@value": "Yervand"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "zam": "http://nasesportoviste.cz/zamestnanec/",
+            "ud": "http://nasesportoviste.cz/udalost/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ud:2",
+        "@type": "sp:Udalost",
+        "sp:datum": {
+            "@type": "xsd:date",
+            "@value": "2022-02-28"
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "23:59:00"
+        },
+        "sp:lokace": {
+            "@id": "lok:2"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Velká událost 1"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "15:00:00"
+        },
+        "sp:organizovan": [
+            {
+                "@id": "zam:1"
+            },
+            {
+                "@id": "zam:3"
+            }
+        ]
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        "@id": "sp:cas",
+        "@type": "rdf:Property",
+        "rdfs:range": {
+            "@id": "xsd:time"
+        },
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "čás standartní, určuje čás"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "cas"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "@id": "sp:Udalost",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "Nějaká událost, která se odehrává na určité lokace v určitou dobu"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Udalost"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "sp:plocha",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "Číslo, které určuje, jak je velká plocha lokace"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Plocha"
+        },
+        "rdf:range": {
+            "@id": "xsd:float"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro": "http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:1",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 0
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "23:59:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "00:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "foaf": "http://xmlns.com/foaf/0.1/"
+        },
+        "@id": "sp:telefon",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "telefonní číslo, jedna z metod identifikace osoby"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "telefon"
+        },
+        "rdfs:subPropertyOf": {
+            "@id": "foaf:phone"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro": "http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:3",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 2
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "18:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "07:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        "@id": "sp:opravnen",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "určitý sportovec má opravneni vstupovát na nějaké lokace"
+        },
+        "rdf:domain": {
+            "@id": "sp:Sportovec"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "opravnen"
+        },
+        "rdf:range": {
+            "@id": "sp:Lokace"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro": "http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:8",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 5
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "21:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "09:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        "@id": "sp:popis",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "popis lokace nebo kryti, který popisuje, jak vypadá, k čemu slouží atp."
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "popis"
+        },
+        "rdfs:subPropertyOf": {
+            "@id": "proton:description"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        "@id": "sp:od",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "čas, kdy něco začíná"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "od"
+        },
+        "rdfs:subPropertyOf": {
+            "@id": "sp:cas"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "zam": "http://nasesportoviste.cz/zamestnanec/"
+        },
+        "@id": "zam:1",
+        "@type": "sp:Zamestnanec",
+        "sp:aktivni": true,
+        "sp:mzda": {
+            "@type": "xsd:decimal",
+            "@value": "400"
+        },
+        "sp:pracovniTelefon": {
+            "@id": "tel:+380.97.514.63.00"
+        },
+        "foaf:familyName": {
+            "@language": "cs",
+            "@value": "Kurinnaya"
+        },
+        "foaf:givenName": {
+            "@language": "cs",
+            "@value": "Valerie"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "@id": "sp:Rozvrh",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "Rozvrh, podle kterého pracují různé lokace v sportovním středisku"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Rozvrh"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf": "http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs":"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "foaf": "http://xmlns.com/foaf/0.1/"
+        },
+        "@id": "sp:Osoba",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "Nějaký člověk, ať je to zamestnanec sportovního střediska nebo sportovec"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Osoba"
+        },
+        "rdfs:subClassOf": {
+            "@id": "foaf:Person"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "zam": "http://nasesportoviste.cz/zamestnanec/",
+            "xsd":"http://www.w3.org/2001/XMLSchema#",
+            "foaf":"http://xmlns.com/foaf/0.1/"
+        },
+        "@id": "zam:2",
+        "@type": "sp:Zamestnanec",
+        "sp:aktivni": true,
+        "sp:mzda": {
+            "@type": "xsd:decimal",
+            "@value": 450
+        },
+        "sp:pracovniTelefon": {
+            "@id": "tel:+420.123.321.000"
+        },
+        "foaf:familyName": {
+            "@language": "en",
+            "@value": "Gunnhildr"
+        },
+        "foaf:givenName": {
+            "@language": "en",
+            "@value": "Jean"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "po": "http://nasesportoviste.cz/povrch/"
+        },
+        "@id": "po:1",
+        "@type": "sp:Povrch",
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Parket"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ud": "http://nasesportoviste.cz/udalost/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "lok":"http://nasesportoviste.cz/lokace/",
+            "zam":"http://nasesportoviste.cz/zamestnanec/"
+        },
+        "@id": "ud:6",
+        "@type": "sp:Udalost",
+        "sp:datum": {
+            "@type": "xsd:date",
+            "@value": "2022-10-10"
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "12:00:00"
+        },
+        "sp:lokace": {
+            "@id": "lok:2"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Turnaj - Tenis"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "07:00:00"
+        },
+        "sp:organizovan": {
+            "@id": "zam:2"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ud": "http://nasesportoviste.cz/udalost/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "zam": "http://nasesportoviste.cz/zamestnanec/",
+            "lok":"http://nasesportoviste.cz/lokace/"
+        },
+        "@id": "ud:1",
+        "@type": "sp:Udalost",
+        "sp:datum": {
+            "@type": "xsd:date",
+            "@value": "2077-07-07"
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "21:00:00"
+        },
+        "sp:lokace": {
+            "@id": "lok:3"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Hustá událost"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "18:00:00"
+        },
+        "sp:organizovan": [
+            {
+                "@id": "zam:1"
+            },
+            {
+                "@id": "zam:2"
+            }
+        ]
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "lok":"http://nasesportoviste.cz/lokace/",
+            "kr":"http://nasesportoviste.cz/kryti/",
+            "po":"http://nasesportoviste.cz/povrch/"
+        },
+        "@id": "lok:1",
+        "@type": "sp:Lokace",
+        "sp:kapacita": {
+            "@type": "xsd:unsignedInt",
+            "@value": 69
+        },
+        "sp:kryje": {
+            "@id": "kr:1"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Velká hala"
+        },
+        "sp:plocha": {
+            "@type": "xsd:float",
+            "@value": 420.0
+        },
+        "sp:povrch": {
+            "@id": "po:2"
+        },
+        "sp:rozvrh": [
+            {
+                "@id": "ro:1"
+            },
+            {
+                "@id": "ro:2"
+            },
+            {
+                "@id": "ro:3"
+            },
+            {
+                "@id": "ro:4"
+            },
+            {
+                "@id": "ro:6"
+            },
+            {
+                "@id": "ro:7"
+            },
+            {
+                "@id": "ro:9"
+            }
+        ]
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:2",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 1
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "18:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "07:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "lok":"http://nasesportoviste.cz/lokace/",
+            "kr":"http://nasesportoviste.cz/kryti/",
+            "po":"http://nasesportoviste.cz/povrch/"
+        },
+        "@id": "lok:2",
+        "@type": "sp:Lokace",
+        "sp:kapacita": {
+            "@type": "xsd:unsignedInt",
+            "@value": "40"
+        },
+        "sp:kryje": {
+            "@id": "kr:2"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Malá hala"
+        },
+        "sp:plocha": {
+            "@type": "xsd:float",
+            "@value": 100.0
+        },
+        "sp:povrch": {
+            "@id": "po:1"
+        },
+        "sp:rozvrh": [
+            {
+                "@id": "ro:1"
+            },
+            {
+                "@id": "ro:2"
+            },
+            {
+                "@id": "ro:3"
+            },
+            {
+                "@id": "ro:5"
+            },
+            {
+                "@id": "ro:6"
+            },
+            {
+                "@id": "ro:8"
+            },
+            {
+                "@id": "ro:9"
+            }
+        ]
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs":"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "foaf":"http://xmlns.com/foaf/0.1/"
+        },
+        "@id": "sp:nazev",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "nazev, pomocí kterého lze identifikovat konkrétní místo ve sportovním středisku nebo prvky v něm přítomné"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "nazev"
+        },
+        "rdfs:subPropertyOf": {
+            "@id": "foaf:name"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:7",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 5
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "17:30:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "07:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "sport":"http://nasesportoviste.cz/sport/",
+            "foaf":"http://xmlns.com/foaf/0.1/",
+            "lok":"http://nasesportoviste.cz/lokace/"
+        },
+        "@id": "sport:1",
+        "@type": "sp:Sportovec",
+        "sp:opravnen": [
+            {
+                "@id": "lok:1"
+            },
+            {
+                "@id": "lok:2"
+            }
+        ],
+        "sp:osobniTelefon": [
+            {
+                "@id": "tel:+420.753.159.789"
+            },
+            {
+                "@id": "tel:+420.123.159.690"
+            }
+        ],
+        "foaf:familyName": {
+            "@language": "cs",
+            "@value": "Strnad"
+        },
+        "foaf:givenName": {
+            "@language": "cs",
+            "@value": "Tomáš"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:9",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 6
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "06:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "00:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "po":"http://nasesportoviste.cz/povrch/"
+        },
+        "@id": "po:3",
+        "@type": "sp:Povrch",
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Trava"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:10",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 6
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "18:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "08:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "kr":"http://nasesportoviste.cz/kryti/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "kr:1",
+        "@type": "sp:Kryti",
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Úplna střecha"
+        },
+        "sp:popis": {
+            "@language": "cs",
+            "@value": "Nejlepší střecha na světě"
+        },
+        "sp:urovenKryti": {
+            "@type": "xsd:float",
+            "@value": 0.7
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:5",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 3
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "21:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "09:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "@id": "sp:Povrch",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "typ pokrytí v určitých lokacich"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Povrch"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs":"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        "@id": "sp:Sportovec",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "Osoba, která přichází využít služby sportovního střediska"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Sportovec"
+        },
+        "rdfs:subClassOf": {
+            "@id": "sp:Osoba"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "rdfs":"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "@id": "sp:pracovniTelefon",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "pracovni telefonní číslo, které má každý zaměstnanec"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "pracovni telefon"
+        },
+        "rdfs:subPropertyOf": {
+            "@id": "sp:telefon"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "zam":"http://nasesportoviste.cz/zamestnanec/",
+            "xsd":"http://www.w3.org/2001/XMLSchema#",
+            "foaf":"http://xmlns.com/foaf/0.1/"
+        },
+        "@id": "zam:4",
+        "@type": "sp:Zamestnanec",
+        "sp:aktivni": true,
+        "sp:mzda": {
+            "@type": "xsd:decimal",
+            "@value": 150
+        },
+        "sp:pracovniTelefon": {
+            "@id": "tel:+420.774.066.035"
+        },
+        "foaf:familyName": {
+            "@language": "cs",
+            "@value": "Lenivý"
+        },
+        "foaf:givenName": {
+            "@language": "cs",
+            "@value": "Jan"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "xsd":"http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "sp:datum",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "datum kdy odehrává určitá událost"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "datum"
+        },
+        "rdf:range": {
+            "@id": "xsd:date"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs":"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        "@id": "sp:osobniTelefon",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "osobní telefonní číslo, jedna z metod identifikace osoby, které má každá osoba"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "osobni telefon"
+        },
+        "rdfs:subPropertyOf": {
+            "@id": "sp:telefon"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ud": "http://nasesportoviste.cz/udalost/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "zam":"http://nasesportoviste.cz/zamestnanec/"
+        },
+        "@id": "ud:4",
+        "@type": "sp:Udalost",
+        "sp:datum": {
+            "@type": "xsd:date",
+            "@value": "2077-07-07"
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "06:00:00"
+        },
+        "sp:lokace": {
+            "@id": "lok:1"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Malá událost"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "00:00:00"
+        },
+        "sp:organizovan": {
+            "@id": "zam:2"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd":"http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:11",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 3
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "21:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "09:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "@id": "sp:organizovan",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "událost organizovaná určitým zaměstnancem"
+        },
+        "rdf:domain": {
+            "@id": "sp:Udalost"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "organizovan"
+        },
+        "rdf:range": {
+            "@id": "sp:Zamestnanec"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "xsd":"http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "sp:kapacita",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "Maximální počet sportovců, který vejde do konkrétního umístění"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Kapacita"
+        },
+        "rdf:range": {
+            "@id": "xsd:unsignedInt"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#"
+        },
+        "@id": "sp:Kryti",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "typ krytí v určitých lokacich"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "kryti"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ud": "http://nasesportoviste.cz/udalost/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "lok":"http://nasesportoviste.cz/lokace/",
+            "zam":"http://nasesportoviste.cz/zamestnanec/"
+        },
+        "@id": "ud:5",
+        "@type": "sp:Udalost",
+        "sp:datum": {
+            "@type": "xsd:date",
+            "@value": "2022-10-10"
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "12:00:00"
+        },
+        "sp:lokace": {
+            "@id": "lok:1"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Turnaj - Futsal"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "07:00:00"
+        },
+        "sp:organizovan": {
+            "@id": "zam:1"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd":"http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:4",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 3
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "18:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "07:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "ro":"http://nasesportoviste.cz/rozvrch/",
+            "xsd":"http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "ro:6",
+        "@type": "sp:Rozvrh",
+        "sp:den": {
+            "@type": "xsd:unsignedInt",
+            "@value": 4
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "18:00:00"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "07:00:00"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "sport":"http://nasesportoviste.cz/sport/",
+            "lok":"http://nasesportoviste.cz/lokace/",
+            "foaf":"http://xmlns.com/foaf/0.1/"
+        },
+        "@id": "sport:2",
+        "@type": "sp:Sportovec",
+        "sp:opravnen": [
+            {
+                "@id": "lok:2"
+            },
+            {
+                "@id": "lok:3"
+            }
+        ],
+        "sp:osobniTelefon": {
+            "@id": "tel:+420.951.357.456"
+        },
+        "foaf:familyName": {
+            "@language": "cs",
+            "@value": "Hroník"
+        },
+        "foaf:givenName": {
+            "@language": "cs",
+            "@value": "Jakub"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "xsd":"http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "sp:urovenKryti",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "číslo, které určuje, jak je lokace pokryta"
+        },
+        "rdf:domain": {
+            "@id": "sp:Kryti"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "uroven kryti"
+        },
+        "rdf:range": {
+            "@id": "xsd:float"
+        }
+    },
+    {
+        "@context": {
+            "sp": "http://nasesportoviste.cz/slovnik/",
+            "ud": "http://nasesportoviste.cz/udalost/",
+            "xsd": "http://www.w3.org/2001/XMLSchema#",
+            "lok":"http://nasesportoviste.cz/lokace/",
+            "zam":"http://nasesportoviste.cz/zamestnanec/"
+        },
+        "@id": "ud:7",
+        "@type": "sp:Udalost",
+        "sp:datum": {
+            "@type": "xsd:date",
+            "@value": "2017-12-10"
+        },
+        "sp:do": {
+            "@type": "xsd:time",
+            "@value": "12:00:00"
+        },
+        "sp:lokace": {
+            "@id": "lok:2"
+        },
+        "sp:nazev": {
+            "@language": "cs",
+            "@value": "Basketbal"
+        },
+        "sp:od": {
+            "@type": "xsd:time",
+            "@value": "07:00:00"
+        },
+        "sp:organizovan": {
+            "@id": "zam:3"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "rdfs":"http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        "@id": "sp:Zamestnanec",
+        "@type": "rdf:Class",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "Osoba, která pracuje ve sportovním středisku"
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "Zaměstnanec"
+        },
+        "rdfs:subClassOf": {
+            "@id": "sp:Osoba"
+        }
+    },
+    {
+        "@context": {
+            "sp":"http://nasesportoviste.cz/slovnik/",
+            "rdf":"http://www.w3.org/2000/01/rdf-schema#",
+            "xsd":"http://www.w3.org/2001/XMLSchema#"
+        },
+        "@id": "sp:den",
+        "@type": "rdf:Property",
+        "rdf:comment": {
+            "@language": "cs",
+            "@value": "den v tydnu: ponděli, úteri..."
+        },
+        "rdf:label": {
+            "@language": "cs",
+            "@value": "den"
+        },
+        "rdf:range": {
+            "@id": "xsd:unsignedInt"
+        }
+    }
+]

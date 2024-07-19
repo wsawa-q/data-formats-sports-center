@@ -1,0 +1,1 @@
+jq '[ .[] | select (."sp:organizovan" != null) | {"@id", "sp:organizovan": ."sp:organizovan" | length } ]'

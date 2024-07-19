@@ -1,0 +1,3 @@
+'Lokace kde se koná nejvíce událostí'
+
+/SportovníStředisko/DostupnéLokace/Lokace[(Události ! count(Událost)) = (max(/SportovníStředisko/DostupnéLokace/Lokace/Události ! count(Událost)))]

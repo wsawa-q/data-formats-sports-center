@@ -1,0 +1,402 @@
+@prefix ns0: <http://nasesportoviste.cz/slovnik/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://nasesportoviste.cz/zamestnanec/3>
+  a <http://nasesportoviste.cz/slovnik/Zamestnance> ;
+  ns0:aktivni false ;
+  ns0:mzda 50.0 ;
+  ns0:pracovniTelefon <tel:+380.97.514.63.00> ;
+  foaf:familyName "Dodoco"@en ;
+  foaf:givenName "Klee"@en .
+
+ns0:Lokace
+  a rdfs:Class ;
+  rdf:subClassOf <http://www.ontotext.com/proton/protontop#Location> ;
+  rdfs:comment "Místo, kde pracují zaměstnance a sportují sportovce, kde prochází různé události"@cs ;
+  rdfs:label "Lokace"@cs .
+
+<http://nasesportoviste.cz/kryti/2>
+  a ns0:Kryti ;
+  ns0:nazev "Poloviční střecha"@cs ;
+  ns0:popis "Nejlepší střecha na světě"@cs ;
+  ns0:urovenKryti "5.0E-1"^^xsd:float .
+
+<http://nasesportoviste.cz/udalost/3>
+  a ns0:Udalost ;
+  ns0:datum "2022-03-01"^^xsd:date ;
+  ns0:do "18:00:00"^^xsd:time ;
+  ns0:lokace <http://nasesportoviste.cz/lokace/2> ;
+  ns0:nazev "Velká událost 2"@cs ;
+  ns0:od "00:00:00"^^xsd:time ;
+  ns0:organizovan <http://nasesportoviste.cz/zamestnanec/1>, <http://nasesportoviste.cz/zamestnanec/2>, <http://nasesportoviste.cz/zamestnanec/4> .
+
+<http://nasesportoviste.cz/lokace/2>
+  a ns0:Lokace ;
+  ns0:kapacita "40"^^xsd:unsignedInt ;
+  ns0:kryje <http://nasesportoviste.cz/kryti/2> ;
+  ns0:nazev "Malá hala"@cs ;
+  ns0:plocha "100.0"^^xsd:float ;
+  ns0:povrch <http://nasesportoviste.cz/povrch/1> ;
+  ns0:rozvrh <http://nasesportoviste.cz/rozvrch/1>, <http://nasesportoviste.cz/rozvrch/2>, <http://nasesportoviste.cz/rozvrch/3>, <http://nasesportoviste.cz/rozvrch/5>, <http://nasesportoviste.cz/rozvrch/6>, <http://nasesportoviste.cz/rozvrch/8>, <http://nasesportoviste.cz/rozvrch/9> .
+
+<http://nasesportoviste.cz/zamestnanec/1>
+  a ns0:Zamestnanec ;
+  ns0:aktivni true ;
+  ns0:mzda 400.0 ;
+  ns0:pracovniTelefon <tel:+380.97.514.63.00> ;
+  foaf:familyName "Kurinnaya"@cs ;
+  foaf:givenName "Valerie"@cs .
+
+<http://nasesportoviste.cz/zamestnanec/2>
+  a ns0:Zamestnanec ;
+  ns0:aktivni true ;
+  ns0:mzda 450.0 ;
+  ns0:pracovniTelefon <tel:+420.123.321.000> ;
+  foaf:familyName "Gunnhildr"@en ;
+  foaf:givenName "Jean"@en .
+
+<http://nasesportoviste.cz/zamestnanec/4>
+  a ns0:Zamestnanec ;
+  ns0:aktivni true ;
+  ns0:mzda 150.0 ;
+  ns0:pracovniTelefon <tel:+420.774.066.035> ;
+  foaf:familyName "Lenivý"@cs ;
+  foaf:givenName "Jan"@cs .
+
+ns0:aktivni
+  a <http://njh.me/Property> ;
+  rdf:range xsd:boolean ;
+  rdfs:comment "status zamestnance, pomocí kterého lze zjistit, zda právě pracuje a je fyzicky přítomen, neni na dovolené nebo služební cestě"@cs ;
+  rdfs:label "aktivni"@cs .
+
+ns0:mzda
+  a rdfs:Property ;
+  rdfs:comment "měsíční mzda zaměstnance"@cs ;
+  rdfs:label "mzda"@cs ;
+  rdfs:range xsd:decimal .
+
+<http://nasesportoviste.cz/kryti/3>
+  a ns0:Kryti ;
+  ns0:nazev "Magická střecha"@cs ;
+  ns0:popis "Je to magie no..."@cs ;
+  ns0:urovenKryti "0"^^xsd:float .
+
+<http://nasesportoviste.cz/udalost/8>
+  a ns0:Udalost ;
+  ns0:datum "2022-10-10"^^xsd:date ;
+  ns0:do "15:00:00"^^xsd:time ;
+  ns0:lokace <http://nasesportoviste.cz/lokace/3> ;
+  ns0:nazev "Turnaj - Volejbal"@cs ;
+  ns0:od "12:30:00"^^xsd:time ;
+  ns0:organizovan <zam:1>, <zam:4> .
+
+<http://nasesportoviste.cz/lokace/3>
+  a ns0:Lokace ;
+  ns0:kapacita "120"^^xsd:unsignedInt ;
+  ns0:kryje <http://nasesportoviste.cz/kryti/3> ;
+  ns0:nazev "Hřiště"@cs ;
+  ns0:plocha "500"^^xsd:float ;
+  ns0:povrch <po:3> ;
+  ns0:rozvrh <http://nasesportoviste.cz/rozvrch/10>, <http://nasesportoviste.cz/rozvrch/11> .
+
+<http://nasesportoviste.cz/povrch/2>
+  a ns0:Povrch ;
+  ns0:nazev "Uměla trava"@cs .
+
+ns0:do
+  a rdfs:Property ;
+  rdf:subPropertyOf ns0:cas ;
+  rdfs:comment "čas, kdy něco končí"@cs ;
+  rdfs:label "do"@cs .
+
+ns0:cas
+  a rdfs:Property ;
+  rdf:range xsd:time ;
+  rdfs:comment "čás standartní, určuje čás"@cs ;
+  rdfs:label "cas"@cs .
+
+<http://nasesportoviste.cz/rozvrch/10>
+  a ns0:Rozvrh ;
+  ns0:den "6"^^xsd:unsignedInt ;
+  ns0:do "18:00:00"^^xsd:time ;
+  ns0:od "08:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrch/11>
+  a ns0:Rozvrh ;
+  ns0:den "3"^^xsd:unsignedInt ;
+  ns0:do "21:00:00"^^xsd:time ;
+  ns0:od "09:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/sport/3>
+  a ns0:Sportovec ;
+  ns0:opravnen <lok:1> ;
+  ns0:osobniTelefon <tel:+420.159.753.123> ;
+  foaf:familyName "Arzumanyan"@en ;
+  foaf:givenName "Yervand"@en .
+
+<http://nasesportoviste.cz/udalost/2>
+  a ns0:Udalost ;
+  ns0:datum "2022-02-28"^^xsd:date ;
+  ns0:do "23:59:00"^^xsd:time ;
+  ns0:lokace <lok:2> ;
+  ns0:nazev "Velká událost 1"@cs ;
+  ns0:od "15:00:00"^^xsd:time ;
+  ns0:organizovan <http://nasesportoviste.cz/zamestnanec/1>, <http://nasesportoviste.cz/zamestnanec/3> .
+
+ns0:Udalost
+  a rdfs:Class ;
+  rdfs:comment "Nějaká událost, která se odehrává na určité lokace v určitou dobu"@cs ;
+  rdfs:label "Udalost"@cs .
+
+ns0:plocha
+  a rdfs:Class ;
+  rdfs:comment "Číslo, které určuje, jak je velká plocha lokace"@cs ;
+  rdfs:label "Plocha"@cs ;
+  rdfs:range xsd:float .
+
+<http://nasesportoviste.cz/rozvrch/1>
+  a ns0:Rozvrh ;
+  ns0:den "0"^^xsd:unsignedInt ;
+  ns0:do "23:59:00"^^xsd:time ;
+  ns0:od "00:00:00"^^xsd:time .
+
+ns0:telefon
+  a rdfs:Property ;
+  rdf:subPropertyOf foaf:phone ;
+  rdfs:comment "telefonní číslo, jedna z metod identifikace osoby"@cs ;
+  rdfs:label "telefon"@cs .
+
+<http://nasesportoviste.cz/rozvrch/3>
+  a ns0:Rozvrh ;
+  ns0:den "2"^^xsd:unsignedInt ;
+  ns0:do "18:00:00"^^xsd:time ;
+  ns0:od "07:00:00"^^xsd:time .
+
+ns0:opravnen
+  a rdfs:Property ;
+  rdfs:comment "určitý sportovec má opravneni vstupovát na nějaké lokace"@cs ;
+  rdfs:domain ns0:Sportovec ;
+  rdfs:label "opravnen"@cs ;
+  rdfs:range ns0:Lokace .
+
+ns0:Sportovec
+  a rdfs:Class ;
+  rdf:subClassOf ns0:Osoba ;
+  rdfs:comment "Osoba, která přichází využít služby sportovního střediska"@cs ;
+  rdfs:label "Sportovec"@cs .
+
+<http://nasesportoviste.cz/rozvrch/8>
+  a ns0:Rozvrh ;
+  ns0:den "5"^^xsd:unsignedInt ;
+  ns0:do "21:00:00"^^xsd:time ;
+  ns0:od "09:00:00"^^xsd:time .
+
+ns0:popis
+  a rdfs:Property ;
+  rdf:subPropertyOf <proton:description> ;
+  rdfs:comment "popis lokace nebo kryti, který popisuje, jak vypadá, k čemu slouží atp."@cs ;
+  rdfs:label "popis"@cs .
+
+ns0:od
+  a rdfs:Property ;
+  rdf:subPropertyOf ns0:cas ;
+  rdfs:comment "čas, kdy něco začíná"@cs ;
+  rdfs:label "od"@cs .
+
+ns0:Rozvrh
+  a rdfs:Class ;
+  rdfs:comment "Rozvrh, podle kterého pracují různé lokace v sportovním středisku"@cs ;
+  rdfs:label "Rozvrh"@cs .
+
+ns0:Osoba
+  a rdfs:Class ;
+  rdf:subClassOf foaf:Person ;
+  rdfs:comment "Nějaký člověk, ať je to zamestnanec sportovního střediska nebo sportovec"@cs ;
+  rdfs:label "Osoba"@cs .
+
+<http://nasesportoviste.cz/povrch/1>
+  a ns0:Povrch ;
+  ns0:nazev "Parket"@cs .
+
+<http://nasesportoviste.cz/udalost/6>
+  a ns0:Udalost ;
+  ns0:datum "2022-10-10"^^xsd:date ;
+  ns0:do "12:00:00"^^xsd:time ;
+  ns0:lokace <http://nasesportoviste.cz/lokace/2> ;
+  ns0:nazev "Turnaj - Tenis"@cs ;
+  ns0:od "07:00:00"^^xsd:time ;
+  ns0:organizovan <http://nasesportoviste.cz/zamestnanec/2> .
+
+<http://nasesportoviste.cz/udalost/1>
+  a ns0:Udalost ;
+  ns0:datum "2077-07-07"^^xsd:date ;
+  ns0:do "21:00:00"^^xsd:time ;
+  ns0:lokace <http://nasesportoviste.cz/lokace/3> ;
+  ns0:nazev "Hustá událost"@cs ;
+  ns0:od "18:00:00"^^xsd:time ;
+  ns0:organizovan <http://nasesportoviste.cz/zamestnanec/1>, <http://nasesportoviste.cz/zamestnanec/2> .
+
+<http://nasesportoviste.cz/lokace/1>
+  a ns0:Lokace ;
+  ns0:kapacita "69"^^xsd:unsignedInt ;
+  ns0:kryje <http://nasesportoviste.cz/kryti/1> ;
+  ns0:nazev "Velká hala"@cs ;
+  ns0:plocha "420"^^xsd:float ;
+  ns0:povrch <http://nasesportoviste.cz/povrch/2> ;
+  ns0:rozvrh <http://nasesportoviste.cz/rozvrch/1>, <http://nasesportoviste.cz/rozvrch/2>, <http://nasesportoviste.cz/rozvrch/3>, <http://nasesportoviste.cz/rozvrch/4>, <http://nasesportoviste.cz/rozvrch/6>, <http://nasesportoviste.cz/rozvrch/7>, <http://nasesportoviste.cz/rozvrch/9> .
+
+<http://nasesportoviste.cz/kryti/1>
+  a ns0:Kryti ;
+  ns0:nazev "Úplna střecha"@cs ;
+  ns0:popis "Nejlepší střecha na světě"@cs ;
+  ns0:urovenKryti "1.0"^^xsd:float .
+
+<http://nasesportoviste.cz/rozvrch/2>
+  a ns0:Rozvrh ;
+  ns0:den "1"^^xsd:unsignedInt ;
+  ns0:do "18:00:00"^^xsd:time ;
+  ns0:od "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrch/4>
+  a ns0:Rozvrh ;
+  ns0:den "3"^^xsd:unsignedInt ;
+  ns0:do "18:00:00"^^xsd:time ;
+  ns0:od "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrch/6>
+  a ns0:Rozvrh ;
+  ns0:den "4"^^xsd:unsignedInt ;
+  ns0:do "18:00:00"^^xsd:time ;
+  ns0:od "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrch/7>
+  a ns0:Rozvrh ;
+  ns0:den "5"^^xsd:unsignedInt ;
+  ns0:do "17:30:00"^^xsd:time ;
+  ns0:od "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrch/9>
+  a ns0:Rozvrh ;
+  ns0:den "6"^^xsd:unsignedInt ;
+  ns0:do "06:00:00"^^xsd:time ;
+  ns0:od "00:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrch/5>
+  a ns0:Rozvrh ;
+  ns0:den "3"^^xsd:unsignedInt ;
+  ns0:do "21:00:00"^^xsd:time ;
+  ns0:od "09:00:00"^^xsd:time .
+
+ns0:nazev
+  a rdfs:Property ;
+  rdf:subPropertyOf foaf:name ;
+  rdfs:comment "nazev, pomocí kterého lze identifikovat konkrétní místo ve sportovním středisku nebo prvky v něm přítomné"@cs ;
+  rdfs:label "nazev"@cs .
+
+<http://nasesportoviste.cz/sport/1>
+  a ns0:Sportovec ;
+  ns0:opravnen <http://nasesportoviste.cz/lokace/1>, <http://nasesportoviste.cz/lokace/2> ;
+  ns0:osobniTelefon <tel:+420.753.159.789>, <tel:+420.123.159.690> ;
+  foaf:familyName "Strnad"@cs ;
+  foaf:givenName "Tomáš"@cs .
+
+<http://nasesportoviste.cz/povrch/3>
+  a ns0:Povrch ;
+  ns0:nazev "Trava"@cs .
+
+ns0:Povrch
+  a rdfs:Class ;
+  rdfs:comment "typ pokrytí v určitých lokacich"@cs ;
+  rdfs:label "Povrch"@cs .
+
+ns0:pracovniTelefon
+  a rdfs:Property ;
+  rdf:subPropertyOf ns0:telefon ;
+  rdfs:comment "pracovni telefonní číslo, které má každý zaměstnanec"@cs ;
+  rdfs:label "pracovni telefon"@cs .
+
+ns0:datum
+  a rdfs:Property ;
+  rdfs:comment "datum kdy odehrává určitá událost"@cs ;
+  rdfs:label "datum"@cs ;
+  rdfs:range xsd:date .
+
+ns0:osobniTelefon
+  a rdfs:Property ;
+  rdf:subPropertyOf ns0:telefon ;
+  rdfs:comment "osobní telefonní číslo, jedna z metod identifikace osoby, které má každá osoba"@cs ;
+  rdfs:label "osobni telefon"@cs .
+
+<http://nasesportoviste.cz/udalost/4>
+  a ns0:Udalost ;
+  ns0:datum "2077-07-07"^^xsd:date ;
+  ns0:do "06:00:00"^^xsd:time ;
+  ns0:lokace <lok:1> ;
+  ns0:nazev "Malá událost"@cs ;
+  ns0:od "00:00:00"^^xsd:time ;
+  ns0:organizovan <http://nasesportoviste.cz/zamestnanec/2> .
+
+ns0:organizovan
+  a rdfs:Property ;
+  rdfs:comment "událost organizovaná určitým zaměstnancem"@cs ;
+  rdfs:domain ns0:Udalost ;
+  rdfs:label "organizovan"@cs ;
+  rdfs:range ns0:Zamestnanec .
+
+ns0:Zamestnanec
+  a rdfs:Class ;
+  rdf:subClassOf ns0:Osoba ;
+  rdfs:comment "Osoba, která pracuje ve sportovním středisku"@cs ;
+  rdfs:label "Zaměstnanec"@cs .
+
+ns0:kapacita
+  a rdfs:Class ;
+  rdfs:comment "Maximální počet sportovců, který vejde do konkrétního umístění"@cs ;
+  rdfs:label "Kapacita"@cs ;
+  rdfs:range xsd:unsignedInt .
+
+ns0:Kryti
+  a rdfs:Class ;
+  rdfs:comment "typ krytí v určitých lokacich"@cs ;
+  rdfs:label "kryti"@cs .
+
+<http://nasesportoviste.cz/udalost/5>
+  a ns0:Udalost ;
+  ns0:datum "2022-10-10"^^xsd:date ;
+  ns0:do "12:00:00"^^xsd:time ;
+  ns0:lokace <http://nasesportoviste.cz/lokace/1> ;
+  ns0:nazev "Turnaj - Futsal"@cs ;
+  ns0:od "07:00:00"^^xsd:time ;
+  ns0:organizovan <http://nasesportoviste.cz/zamestnanec/1> .
+
+<http://nasesportoviste.cz/sport/2>
+  a ns0:Sportovec ;
+  ns0:opravnen <http://nasesportoviste.cz/lokace/2>, <http://nasesportoviste.cz/lokace/3> ;
+  ns0:osobniTelefon <tel:+420.951.357.456> ;
+  foaf:familyName "Hroník"@cs ;
+  foaf:givenName "Jakub"@cs .
+
+ns0:urovenKryti
+  a rdfs:Property ;
+  rdfs:comment "číslo, které určuje, jak je lokace pokryta"@cs ;
+  rdfs:domain ns0:Kryti ;
+  rdfs:label "uroven kryti"@cs ;
+  rdfs:range xsd:float .
+
+<http://nasesportoviste.cz/udalost/7>
+  a ns0:Udalost ;
+  ns0:datum "2017-12-10"^^xsd:date ;
+  ns0:do "12:00:00"^^xsd:time ;
+  ns0:lokace <http://nasesportoviste.cz/lokace/2> ;
+  ns0:nazev "Basketbal"@cs ;
+  ns0:od "07:00:00"^^xsd:time ;
+  ns0:organizovan <http://nasesportoviste.cz/zamestnanec/3> .
+
+ns0:den
+  a rdfs:Property ;
+  rdfs:comment "den v tydnu: ponděli, úteri..."@cs ;
+  rdfs:label "den"@cs ;
+  rdfs:range xsd:unsignedInt .

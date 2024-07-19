@@ -1,0 +1,39 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/lokace.schema.json",
+    "title": "Lokace",
+    "description": "Místo, kde pracují zaměstnance a sportují sportovce, kde prochází různé události",
+    "type": "object",
+    "properties": {
+        "nazev": {
+            "type": "string"
+        },
+        "plocha": {
+            "type": "number",
+            "exclusiveMinimum": 0
+        },
+        "kapacita": {
+            "type": "number",
+            "exclusiveMinimum": 0
+        },
+        "kryje": {
+            "$ref": "http://nasesportoviste.cz/kryti.schema.json"
+        },
+        "povrch": {
+            "$ref": "http://nasesportoviste.cz/povrch.schema.json"
+        },
+        "rozvrch": {
+            "type": "array",
+            "items": {
+                "$ref": "http://nasesportoviste.cz/rozvrch.schema.json"
+            }
+        }
+    },
+    "required": [
+        "nazev",
+        "popis",
+        "urovenKryti",
+        "kryje",
+        "povrch"
+    ]
+}

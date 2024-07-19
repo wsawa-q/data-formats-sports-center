@@ -1,0 +1,25 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/osoba.schema.json",
+    "title": "Kryti",
+    "description": "Typ krytí v určitých lokacich",
+    "type": "object",
+    "properties": {
+        "nazev": {
+            "type": "string"
+        },
+        "popis": {
+            "type": "string"
+        },
+        "urovenKryti": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+        }
+    },
+    "required": [
+        "nazev",
+        "popis",
+        "urovenKryti"
+    ]
+}

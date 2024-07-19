@@ -1,0 +1,31 @@
+PREFIX sp: <http://nasesportoviste.cz/slovnik/>
+PREFIX lok: <http://nasesportoviste.cz/lokace/>
+PREFIX kr: <http://nasesportoviste.cz/kryti/>
+PREFIX po: <http://nasesportoviste.cz/povrch/>
+PREFIX ro: <http://nasesportoviste.cz/rozvrh/>
+PREFIX ud: <http://nasesportoviste.cz/udalost/>
+PREFIX zam: <http://nasesportoviste.cz/zamestnanec/>
+PREFIX sport: <http://nasesportoviste.cz/sportovec/>
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX proton: <http://www.ontotext.com/proton/protontop#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+# Výpis celkových nákladů na jednotlivé události
+
+select distinct ?u ?datum ?od ?do ?h ?hourly (?h*?hourly AS ?totalcost)
+WHERE {
+?u a sp:Udalost;
+    sp:od ?od;
+    sp:do ?do;
+    sp:datum ?datum.
+    {
+      SELECT ?u (SUM(?mzda) AS ?hourly)
+          WHERE {
+              ?u sp:organizovan/sp:mzda ?mzda.
+           } GROUP BY ?u
+     }
+BIND( hours(?do) - hours(?od) + minutes(?do)/60.0 - minutes(?od)/60.0 as ?h)
+}

@@ -1,0 +1,29 @@
+PREFIX sp: <http://nasesportoviste.cz/slovnik/>
+PREFIX lok: <http://nasesportoviste.cz/lokace/>
+PREFIX kr: <http://nasesportoviste.cz/kryti/>
+PREFIX po: <http://nasesportoviste.cz/povrch/>
+PREFIX ro: <http://nasesportoviste.cz/rozvrh/>
+PREFIX ud: <http://nasesportoviste.cz/udalost/>
+PREFIX zam: <http://nasesportoviste.cz/zamestnanec/>
+PREFIX sport: <http://nasesportoviste.cz/sportovec/>
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX proton: <http://www.ontotext.com/proton/protontop#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+# Výpis kontaktů na zaměstnance organizující události 2022-10-10, které se konají v lokaci s krytím < 1. (rušení událostí z důvodu počasí)
+
+select  ?name ?lname  ?phone ?uname
+WHERE {
+?u a sp:Udalost;
+     sp:datum "2022-10-10"^^xsd:date ;
+     sp:lokace/sp:kryje/sp:urovenKryti ?kr;
+     sp:organizovan ?z;
+     sp:nazev ?uname .
+ ?z foaf:givenName ?name;
+     foaf:familyName ?lname;
+     sp:pracovniTelefon ?phone.
+   FILTER(?kr < 1.0)
+} ORDER BY ?u

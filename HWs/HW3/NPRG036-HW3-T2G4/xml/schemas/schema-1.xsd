@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+xmlns:sp="http://nasesportoviste.cz/slovnik/"
+xmlns:xml="http://www.w3.org/XML/1998/namespace"
+targetNamespace="http://nasesportoviste.cz/slovnik/"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ elementFormDefault="qualified">
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+  schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+
+    <xs:element name="SportovníStředisko" type="sp:SportovniStředisko"/>
+
+    <xs:complexType name="SportovniStředisko">
+        <xs:sequence>
+        <xs:element name="Název" type="sp:StringWithLang"/>
+        <xs:element name="DostupnéLokace" type="sp:ListLokací"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Lokace">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="Název" type="sp:StringWithLang"/>
+            <xs:element name="Plocha" type="xs:double"/>
+            <xs:element name="Kapacita" type="xs:positiveInteger"/>
+            <xs:element name="Krytí" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="id" type="xs:string"/>
+                        <xs:element name="Název" type="sp:StringWithLang"/>
+                        <xs:element name="Popis" type="sp:StringWithLang"/>
+                        <xs:element name="ÚroveňKrytí" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Povrch" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="id" type="xs:string"/>
+                        <xs:element name="Název" type="sp:StringWithLang"/>
+                        <xs:element name="Barva" type="sp:Barva"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="OprávněniKPřístupu" type="sp:ListSportovců"/>
+            <xs:element name="PravidelnýRozvrh" type="sp:ListRozvrhů"/>
+            <xs:element name="Události" type="sp:ListUdálostí"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+
+    <xs:complexType name="Rozvrh">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="Den" type="sp:DenVTýdnu"/>
+            <xs:element name="Od" type="xs:time"/>
+            <xs:element name="Do" type="xs:time"/>
+            <xs:element name="Organizátoři" type="sp:ListZaměstnanců"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Událost">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="Název" type="sp:StringWithLang"/>
+            <xs:element name="Datum" type="xs:date"/>
+            <xs:element name="Od" type="xs:time"/>
+            <xs:element name="Do" type="xs:time"/>
+            <xs:element name="Organizátoři" type="sp:ListZaměstnanců"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="BaseOsoba">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="KřestníJméno" type="sp:StringWithLang" />
+            <xs:element name="Příjmení" type="sp:StringWithLang" />
+            <xs:element name="Telefon" minOccurs="0" maxOccurs="unbounded" type="sp:TelefonníČíslo"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="Sportovec">
+        <xs:complexContent>
+            <xs:extension base="sp:BaseOsoba" />
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Zaměstnanec">
+        <xs:complexContent>
+            <xs:extension base="sp:BaseOsoba">
+                <xs:sequence>
+                    <xs:element name="PracovníTelefon" type="sp:TelefonníČíslo"/>
+                    <xs:element name="Mzda" type="sp:Peníze"/>
+                </xs:sequence>
+                <xs:attribute name="aktivni" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <xs:complexType name="StringWithLang">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="xml:lang" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+    <xs:simpleType name="DenVTýdnu">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxExclusive value="8"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="TelefonníČíslo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[+]?[0-9 ]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Barva">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="0x[0-9a-fA-F]{8}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Peníze">
+        <xs:attribute name="měna" type="xs:string"/>
+        <xs:attribute name="hodnota" type="xs:decimal"/>
+    </xs:complexType>
+
+
+
+
+    <xs:complexType name="ListZaměstnanců">
+        <xs:sequence>
+            <xs:element name="Zaměstnanec" minOccurs="0" maxOccurs="unbounded" type="sp:Zaměstnanec"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ListSportovců">
+        <xs:sequence>
+            <xs:element name="Sportovec" minOccurs="0" maxOccurs="unbounded" type="sp:Sportovec"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="ListRozvrhů">
+        <xs:sequence>
+            <xs:element name="Rozvrh" minOccurs="0" maxOccurs="unbounded" type="sp:Rozvrh"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ListUdálostí">
+        <xs:sequence>
+            <xs:element name="Událost" minOccurs="0" maxOccurs="unbounded" type="sp:Událost"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ListLokací">
+        <xs:sequence>
+            <xs:element name="Lokace" minOccurs="0" maxOccurs="unbounded" type="sp:Lokace"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

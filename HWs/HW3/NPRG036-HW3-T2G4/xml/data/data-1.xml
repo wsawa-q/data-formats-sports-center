@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SportovníStředisko 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:xml="http://www.w3.org/XML/1998/namespace"
+xmlns="http://nasesportoviste.cz/slovnik/"
+    xsi:schemaLocation="http://nasesportoviste.cz/slovnik/ ./hierarchy.xsd"
+>
+    <Název xml:lang="cs-CZ">Středisko 17</Název>
+    <DostupnéLokace>
+
+        <Lokace>
+            <id>1</id>
+            <Název xml:lang="cs-CZ">Velká hala</Název>
+            <Plocha>420</Plocha>
+            <Kapacita>69</Kapacita>
+            <Krytí>
+                <id>1</id>
+                <Název xml:lang="cs-CZ">Úplná střecha</Název>
+                <Popis xml:lang="cs-CZ">Nejlepší střecha na světě</Popis>
+                <ÚroveňKrytí>1</ÚroveňKrytí>
+            </Krytí>
+            <Povrch>
+                <id>1</id>
+                <Název xml:lang="cs-CZ">Parkety</Název>
+                <Barva>0xF23E54FF</Barva>
+            </Povrch>
+
+            <OprávněniKPřístupu>
+                <Sportovec>
+                    <id>1</id>
+                    <KřestníJméno xml:lang="cs-CZ">Tomáš</KřestníJméno>
+                    <Příjmení xml:lang="cs-CZ">Strnad</Příjmení>
+                    <Telefon>+420 753 159 789</Telefon>
+                    <Telefon>+420 123 159 690</Telefon>
+                </Sportovec>    
+                <Sportovec>
+                    <id>3</id>
+                    <KřestníJméno xml:lang="cs-CZ">Yervand</KřestníJméno>
+                    <Příjmení xml:lang="cs-CZ">Arzumanyan</Příjmení>
+                    <Telefon>+420 159 753 123</Telefon>
+                </Sportovec>    
+            </OprávněniKPřístupu>
+
+            <PravidelnýRozvrh>
+                    <Rozvrh>
+                        <id>1</id>
+                        <Den>0</Den>
+                        <Od>00:00:00</Od>
+                        <Do>23:59:59</Do>
+                        <Organizátoři>
+                            <Zaměstnanec aktivni="true">
+                                <id>2</id>
+                                <KřestníJméno xml:lang="en-US">Jean</KřestníJméno>
+                                <Příjmení xml:lang="en-US">Gunnhildr</Příjmení>
+                                <PracovníTelefon>+420 123 321 000</PracovníTelefon>
+                                <Mzda hodnota="450" měna="ETH"/>
+                            </Zaměstnanec>   
+                        </Organizátoři>
+                    </Rozvrh>
+                    <Rozvrh>
+                        <id>2</id>
+                        <Den>1</Den>
+                        <Od>07:00:00</Od>
+                        <Do>18:00:00</Do>
+                        <Organizátoři/>
+                    </Rozvrh>
+            </PravidelnýRozvrh>
+            <Události>
+                <Událost>
+                    <id>4</id>
+                    <Název xml:lang="cs-CZ">Malá událost</Název>   
+                    <Datum>2077-07-07</Datum> 
+                    <Od>00:00:00</Od>
+                    <Do>06:00:00</Do>
+                    <Organizátoři>
+                        <Zaměstnanec aktivni="true">
+                            <id>2</id>
+                            <KřestníJméno xml:lang="en-US">Jean</KřestníJméno>
+                            <Příjmení xml:lang="en-US">Gunnhildr</Příjmení>
+                            <PracovníTelefon>+420 123 321 000</PracovníTelefon>
+                            <Mzda hodnota="450" měna="BTC"/>
+                        </Zaměstnanec>   
+                    </Organizátoři>
+                </Událost> 
+
+                <Událost>
+                    <id>5</id>
+                    <Název xml:lang="cs-CZ">Turnaj - Futsal</Název>   
+                    <Datum>2022-10-10</Datum> 
+                    <Od>07:00:00</Od>
+                    <Do>12:00:00</Do>
+                    <Organizátoři>
+                        <Zaměstnanec aktivni="true">
+                            <id>1</id>
+                            <KřestníJméno xml:lang="cs-CZ">Valerie</KřestníJméno>
+                            <Příjmení xml:lang="cs-CZ">Kurinnaya</Příjmení>
+                            <PracovníTelefon>+380 97 514 63 00</PracovníTelefon>
+                            <Mzda hodnota="400" měna="BTC"/>
+                        </Zaměstnanec>   
+                    </Organizátoři>
+                </Událost>       
+            </Události>
+        </Lokace>
+
+
+
+        <Lokace>
+            <id>2</id>
+            <Název xml:lang="cs-CZ">Malá hala</Název>
+            <Plocha>100</Plocha>
+            <Kapacita>40</Kapacita>
+            <Krytí>
+                <id>2</id>
+                <Název xml:lang="cs-CZ"> Poloviční střecha</Název>  
+                <Popis xml:lang="cs-CZ">Nejlepší střecha na světě</Popis>
+                <ÚroveňKrytí>0.5</ÚroveňKrytí>  
+            </Krytí>
+            <Povrch>
+                <id>2</id>
+                <Název xml:lang="cs-CZ">Umělá tráva</Název>
+                <Barva>0x00FF00DD</Barva>
+            </Povrch>
+            <OprávněniKPřístupu>
+                <Sportovec>
+                    <id>1</id>
+                    <KřestníJméno xml:lang="cs-CZ">Tomáš</KřestníJméno>
+                    <Příjmení xml:lang="cs-CZ">Strnad</Příjmení>
+                    <Telefon>+420 753 159 789</Telefon>
+                    <Telefon>+420 123 159 690</Telefon>
+                </Sportovec>    
+                <Sportovec>
+                    <id>2</id>
+                    <KřestníJméno xml:lang="cs-CZ">Jakub</KřestníJméno>
+                    <Příjmení xml:lang="cs-CZ">Hroník</Příjmení>
+                    <Telefon>+420 951 357 456</Telefon>
+                </Sportovec>    
+            </OprávněniKPřístupu>
+            <PravidelnýRozvrh/>
+
+
+            <Události>
+                <Událost>
+                    <id>2</id>
+                    <Název xml:lang="cs-CZ">Velká událost 1</Název>   
+                    <Datum>2022-02-28</Datum> 
+                    <Od>15:00:00</Od>
+                    <Do>23:59:00</Do>
+                    <Organizátoři>
+                        <Zaměstnanec aktivni="true">
+                            <id>1</id>
+                            <KřestníJméno xml:lang="cs-CZ">Valerie</KřestníJméno>
+                            <Příjmení xml:lang="cs-CZ">Kurinnaya</Příjmení>
+                            <PracovníTelefon>+380 97 514 63 00</PracovníTelefon>
+                            <Mzda hodnota="400" měna="BTC"/>
+                        </Zaměstnanec>  
+                        <Zaměstnanec aktivni="false">
+                            <id>3</id>
+                            <KřestníJméno xml:lang="en-US">Klee</KřestníJméno>
+                            <Příjmení xml:lang="en-US">Dodoco</Příjmení>
+                            <PracovníTelefon>+380 97 514 63 00</PracovníTelefon>
+                            <Mzda hodnota="50" měna="DOGE"/>
+                        </Zaměstnanec>    
+                    </Organizátoři>
+                </Událost>   
+                <Událost>
+                    <id>3</id>
+                    <Název xml:lang="cs-CZ">Velká událost 2</Název>   
+                    <Datum>2022-03-01</Datum> 
+                    <Od>00:00:00</Od>
+                    <Do>18:00:00</Do>
+                    <Organizátoři>
+                        <Zaměstnanec aktivni="true">
+                            <id>1</id>
+                            <KřestníJméno xml:lang="cs-CZ">Valerie</KřestníJméno>
+                            <Příjmení xml:lang="cs-CZ">Kurinnaya</Příjmení>
+                            <PracovníTelefon>+380 97 514 63 00</PracovníTelefon>
+                            <Mzda hodnota="400" měna="BTC"/>
+                        </Zaměstnanec>  
+                        <Zaměstnanec aktivni="true">
+                            <id>2</id>
+                            <KřestníJméno xml:lang="en-US">Jean</KřestníJméno>
+                            <Příjmení xml:lang="en-US">Gunnhildr</Příjmení>
+                            <PracovníTelefon>+420 123 321 000</PracovníTelefon>
+                            <Mzda hodnota="450" měna="BTC"/>
+                        </Zaměstnanec>   
+                        <Zaměstnanec aktivni="true">
+                            <id>4</id>
+                            <KřestníJméno xml:lang="cs-CZ">Jan</KřestníJméno>
+                            <Příjmení xml:lang="cs-CZ">Lenivý</Příjmení>
+                            <PracovníTelefon>+420 774 066 035</PracovníTelefon>
+                            <Mzda hodnota="150" měna="hal."/>
+                        </Zaměstnanec>  
+                    </Organizátoři>
+                </Událost>   
+                
+                <Událost>
+                    <id>6</id>
+                    <Název xml:lang="cs-CZ">Turnaj - Tenis</Název>   
+                    <Datum>2022-10-10</Datum> 
+                    <Od>07:00:00</Od>
+                    <Do>12:00:00</Do>
+                    <Organizátoři>
+                        <Zaměstnanec aktivni="true">
+                            <id>2</id>
+                            <KřestníJméno xml:lang="en-US">Jean</KřestníJméno>
+                            <Příjmení xml:lang="en-US">Gunnhildr</Příjmení>
+                            <PracovníTelefon>+420 123 321 000</PracovníTelefon>
+                            <Mzda hodnota="450" měna="BTC"/>
+                        </Zaměstnanec>    
+                    </Organizátoři>
+                </Událost>
+
+                <Událost>
+                    <id>7</id>
+                    <Název xml:lang="cs-CZ">Basketbal</Název>   
+                    <Datum>2017-12-10</Datum> 
+                    <Od>07:00:00</Od>
+                    <Do>12:00:00</Do>
+                    <Organizátoři>
+                        <Zaměstnanec aktivni="false">
+                            <id>3</id>
+                            <KřestníJméno xml:lang="en-US">Klee</KřestníJméno>
+                            <Příjmení xml:lang="en-US">Dodoco</Příjmení>
+                            <PracovníTelefon>+380 97 514 63 00</PracovníTelefon>
+                            <Mzda hodnota="50" měna="DOGE"/>
+                        </Zaměstnanec>    
+                    </Organizátoři>
+                </Událost>
+            </Události>
+        </Lokace>
+
+
+
+        <Lokace>
+            <id>3</id>
+            <Název xml:lang="cs-CZ">Hřiště</Název>
+            <Plocha>500</Plocha>
+            <Kapacita>120</Kapacita>
+            <Krytí>
+                <id>3</id>
+                <Název xml:lang="cs-CZ"> Magická střecha</Název>  
+                <Popis xml:lang="cs-CZ">Je to magie no</Popis>
+                <ÚroveňKrytí>0</ÚroveňKrytí>  
+            </Krytí>
+            <Povrch>
+                <id>3</id>
+                <Název xml:lang="cs-CZ">Tráva</Název>
+                <Barva>0x00DD00FF</Barva>
+            </Povrch>
+            <OprávněniKPřístupu>
+                <Sportovec>
+                    <id>2</id>
+                    <KřestníJméno xml:lang="cs-CZ">Jakub</KřestníJméno>
+                    <Příjmení xml:lang="cs-CZ">Hroník</Příjmení>
+                    <Telefon>+420 951 357 456</Telefon>
+                </Sportovec>    
+            </OprávněniKPřístupu>
+            <PravidelnýRozvrh/>
+            <Události>
+                <Událost>
+                    <id>1</id>
+                    <Název xml:lang="cs-CZ">Hustá událost</Název>   
+                    <Datum>2077-07-07</Datum> 
+                    <Od>18:00:00</Od>
+                    <Do>21:00:00</Do>
+                    <Organizátoři>
+                        <Zaměstnanec aktivni="true">
+                            <id>1</id>
+                            <KřestníJméno xml:lang="cs-CZ">Valerie</KřestníJméno>
+                            <Příjmení xml:lang="cs-CZ">Kurinnaya</Příjmení>
+                            <PracovníTelefon>+380 97 514 63 00</PracovníTelefon>
+                            <Mzda hodnota="400" měna="BTC"/>
+                        </Zaměstnanec>  
+                        <Zaměstnanec aktivni="true">
+                            <id>2</id>
+                            <KřestníJméno xml:lang="en-US">Jean</KřestníJméno>
+                            <Příjmení xml:lang="en-US">Gunnhildr</Příjmení>
+                            <PracovníTelefon>+420 123 321 000</PracovníTelefon>
+                            <Mzda hodnota="450" měna="BTC"/>
+                        </Zaměstnanec>    
+                    </Organizátoři>
+                </Událost>   
+
+                <Událost>
+                    <id>8</id>
+                    <Název xml:lang="cs-CZ">Turnaj - Volejbal</Název>   
+                    <Datum>2022-10-10</Datum> 
+                    <Od>12:30:00</Od>
+                    <Do>15:00:00</Do>
+                    <Organizátoři>
+                        <Zaměstnanec aktivni="true">
+                            <id>1</id>
+                            <KřestníJméno xml:lang="cs-CZ">Valerie</KřestníJméno>
+                            <Příjmení xml:lang="cs-CZ">Kurinnaya</Příjmení>
+                            <PracovníTelefon>+380 97 514 63 00</PracovníTelefon>
+                            <Mzda hodnota="400" měna="BTC"/>
+                        </Zaměstnanec>  
+                        <Zaměstnanec aktivni="true">
+                            <id>4</id>
+                            <KřestníJméno xml:lang="cs-CZ">Jan</KřestníJméno>
+                            <Příjmení xml:lang="cs-CZ">Lenivý</Příjmení>
+                            <PracovníTelefon>+420 774 066 035</PracovníTelefon>
+                            <Mzda hodnota="150" měna="hal."/>
+                        </Zaměstnanec>    
+                    </Organizátoři>
+                </Událost>
+            </Události>
+        </Lokace>
+
+
+    </DostupnéLokace>
+
+</SportovníStředisko>

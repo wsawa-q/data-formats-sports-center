@@ -1,0 +1,1 @@
+jq '[.[]."sp:urovenKryti" | select (. != null) | ."@value" ] | add/length'

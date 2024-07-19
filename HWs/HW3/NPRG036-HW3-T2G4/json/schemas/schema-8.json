@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/telefon.schema.json",
+    "title": "telefon",
+    "description": "telefonní číslo, jedna z metod identifikace osoby",
+    "type": "object",
+    "properties": {
+        "telefon": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "telefon"
+    ]
+}

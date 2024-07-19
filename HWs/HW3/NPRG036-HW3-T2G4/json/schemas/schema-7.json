@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/rozvrch.schema.json",
+    "title": "Rozvrch",
+    "description": "Rozvrh, podle kterého pracují různé lokace v sportovním středisku",
+    "type": "object",
+    "properties": {
+        "nazev": {
+            "type": "string"
+        },
+        "interval": {
+            "$ref": "http://nasesportoviste.cz/interval.schema.json"
+        }
+    },
+    "required": [
+        "nazev",
+        "interval"
+    ]
+}

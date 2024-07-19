@@ -1,0 +1,26 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/osoba.schema.json",
+    "title": "Osoba",
+    "description": "Nějaký člověk, ať je to zamestnanec sportovního střediska nebo sportovec",
+    "type": "object",
+    "properties": {
+        "givenName": {
+            "type": "string"
+        },
+        "familyName": {
+            "type": "string"
+        },
+        "osobniTelefon": {
+            "type": "array",
+            "items": {
+                "$ref": "http://nasesportoviste.cz/telefon.schema.json"
+            },
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "givenName",
+        "familyName"
+    ]
+}

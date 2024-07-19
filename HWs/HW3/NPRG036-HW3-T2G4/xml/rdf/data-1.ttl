@@ -1,0 +1,283 @@
+
+@prefix sp: <http://nasesportoviste.cz/slovnik/> .
+@prefix lok: <http://nasesportoviste.cz/lokace/> .
+@prefix kr: <http://nasesportoviste.cz/kryti/> .
+@prefix po: <http://nasesportoviste.cz/povrch/> .
+@prefix ro: <http://nasesportoviste.cz/rozvrh/> .
+@prefix ud: <http://nasesportoviste.cz/udalost/> .
+@prefix zam: <http://nasesportoviste.cz/zamestnanec/> .
+@prefix sport: <http://nasesportoviste.cz/sportovec/> .
+    
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix proton: <http://www.ontotext.com/proton/protontop#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+lok:1 a sp:Lokace;
+    sp:nazev "Velká hala"@cs-CZ;
+    sp:plocha "420"^^xsd:float;
+    sp:kapacita "69"^^xsd:unsignedInt;
+    sp:kryje kr:1;
+    sp:povrch po:1.
+    
+    
+kr:1 a sp:Kryti;
+    sp:nazev "Úplná střecha"@cs-CZ;
+    sp:popis "Nejlepší střecha na světě"@cs-CZ;
+    sp:urovenKryti "1"^^xsd:float.
+    
+
+po:1 a sp:Povrch;
+    sp:nazev "Parkety"@cs-CZ;
+lok:1 sp:rozvrh ro:1.
+ro:1 a sp:Rozvrh ;
+    sp:den "0"^^xsd:unsignedInt ;
+    sp:od "00:00:00"^^xsd:time ;
+    sp:do "23:59:59"^^xsd:time .
+lok:1 sp:rozvrh ro:2.
+ro:2 a sp:Rozvrh ;
+    sp:den "1"^^xsd:unsignedInt ;
+    sp:od "07:00:00"^^xsd:time ;
+    sp:do "18:00:00"^^xsd:time .
+
+ud:4 a sp:Udalost ;
+    sp:nazev "Malá událost"@cs-CZ ;
+    sp:datum "2077-07-07"^^xsd:date ;
+    sp:od "00:00:00"^^xsd:time ;
+    sp:do "06:00:00"^^xsd:time ;
+    sp:lokace lok:1.
+
+                zam:2 a sp:Zamestnanec ;
+    foaf:givenName "Jean"@en-US ;
+    foaf:familyName "Gunnhildr"@en-US ;            
+    sp:mzda "450"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:2 sp:pracovniTelefon <tel:"+420.123.321.000">.
+
+ud:4 sp:organizovan zam:2.
+
+            
+ud:5 a sp:Udalost ;
+    sp:nazev "Turnaj - Futsal"@cs-CZ ;
+    sp:datum "2022-10-10"^^xsd:date ;
+    sp:od "07:00:00"^^xsd:time ;
+    sp:do "12:00:00"^^xsd:time ;
+    sp:lokace lok:1.
+
+                zam:1 a sp:Zamestnanec ;
+    foaf:givenName "Valerie"@cs-CZ ;
+    foaf:familyName "Kurinnaya"@cs-CZ ;            
+    sp:mzda "400"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:1 sp:pracovniTelefon <tel:"+380.97.514.63.00">.
+
+ud:5 sp:organizovan zam:1.
+
+            sport:1 a sp:Sportovec ;
+    foaf:givenName "Tomáš"@cs-CZ ;
+    foaf:familyName "Strnad"@cs-CZ ;
+    sp:opravnen lok:1 .
+    sport:1 sp:osobniTelefon <tel:"+420.753.159.789">.
+sport:1 sp:osobniTelefon <tel:"+420.123.159.690">.
+sport:3 a sp:Sportovec ;
+    foaf:givenName "Yervand"@cs-CZ ;
+    foaf:familyName "Arzumanyan"@cs-CZ ;
+    sp:opravnen lok:1 .
+    sport:3 sp:osobniTelefon <tel:"+420.159.753.123">.
+lok:2 a sp:Lokace;
+    sp:nazev "Malá hala"@cs-CZ;
+    sp:plocha "100"^^xsd:float;
+    sp:kapacita "40"^^xsd:unsignedInt;
+    sp:kryje kr:2;
+    sp:povrch po:2.
+    
+    
+kr:2 a sp:Kryti;
+    sp:nazev " Poloviční střecha"@cs-CZ;
+    sp:popis "Nejlepší střecha na světě"@cs-CZ;
+    sp:urovenKryti "0.5"^^xsd:float.
+    
+
+po:2 a sp:Povrch;
+    sp:nazev "Umělá tráva"@cs-CZ;
+
+ud:2 a sp:Udalost ;
+    sp:nazev "Velká událost 1"@cs-CZ ;
+    sp:datum "2022-02-28"^^xsd:date ;
+    sp:od "15:00:00"^^xsd:time ;
+    sp:do "23:59:00"^^xsd:time ;
+    sp:lokace lok:2.
+
+                zam:1 a sp:Zamestnanec ;
+    foaf:givenName "Valerie"@cs-CZ ;
+    foaf:familyName "Kurinnaya"@cs-CZ ;            
+    sp:mzda "400"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:1 sp:pracovniTelefon <tel:"+380.97.514.63.00">.
+
+ud:2 sp:organizovan zam:1.
+
+                zam:3 a sp:Zamestnanec ;
+    foaf:givenName "Klee"@en-US ;
+    foaf:familyName "Dodoco"@en-US ;            
+    sp:mzda "50"^^xsd:decimal ;
+    sp:aktivni false .
+    zam:3 sp:pracovniTelefon <tel:"+380.97.514.63.00">.
+
+ud:2 sp:organizovan zam:3.
+
+            
+ud:3 a sp:Udalost ;
+    sp:nazev "Velká událost 2"@cs-CZ ;
+    sp:datum "2022-03-01"^^xsd:date ;
+    sp:od "00:00:00"^^xsd:time ;
+    sp:do "18:00:00"^^xsd:time ;
+    sp:lokace lok:2.
+
+                zam:1 a sp:Zamestnanec ;
+    foaf:givenName "Valerie"@cs-CZ ;
+    foaf:familyName "Kurinnaya"@cs-CZ ;            
+    sp:mzda "400"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:1 sp:pracovniTelefon <tel:"+380.97.514.63.00">.
+
+ud:3 sp:organizovan zam:1.
+
+                zam:2 a sp:Zamestnanec ;
+    foaf:givenName "Jean"@en-US ;
+    foaf:familyName "Gunnhildr"@en-US ;            
+    sp:mzda "450"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:2 sp:pracovniTelefon <tel:"+420.123.321.000">.
+
+ud:3 sp:organizovan zam:2.
+
+                zam:4 a sp:Zamestnanec ;
+    foaf:givenName "Jan"@cs-CZ ;
+    foaf:familyName "Lenivý"@cs-CZ ;            
+    sp:mzda "150"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:4 sp:pracovniTelefon <tel:"+420.774.066.035">.
+
+ud:3 sp:organizovan zam:4.
+
+            
+ud:6 a sp:Udalost ;
+    sp:nazev "Turnaj - Tenis"@cs-CZ ;
+    sp:datum "2022-10-10"^^xsd:date ;
+    sp:od "07:00:00"^^xsd:time ;
+    sp:do "12:00:00"^^xsd:time ;
+    sp:lokace lok:2.
+
+                zam:2 a sp:Zamestnanec ;
+    foaf:givenName "Jean"@en-US ;
+    foaf:familyName "Gunnhildr"@en-US ;            
+    sp:mzda "450"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:2 sp:pracovniTelefon <tel:"+420.123.321.000">.
+
+ud:6 sp:organizovan zam:2.
+
+            
+ud:7 a sp:Udalost ;
+    sp:nazev "Basketbal"@cs-CZ ;
+    sp:datum "2017-12-10"^^xsd:date ;
+    sp:od "07:00:00"^^xsd:time ;
+    sp:do "12:00:00"^^xsd:time ;
+    sp:lokace lok:2.
+
+                zam:3 a sp:Zamestnanec ;
+    foaf:givenName "Klee"@en-US ;
+    foaf:familyName "Dodoco"@en-US ;            
+    sp:mzda "50"^^xsd:decimal ;
+    sp:aktivni false .
+    zam:3 sp:pracovniTelefon <tel:"+380.97.514.63.00">.
+
+ud:7 sp:organizovan zam:3.
+
+            sport:1 a sp:Sportovec ;
+    foaf:givenName "Tomáš"@cs-CZ ;
+    foaf:familyName "Strnad"@cs-CZ ;
+    sp:opravnen lok:2 .
+    sport:1 sp:osobniTelefon <tel:"+420.753.159.789">.
+sport:1 sp:osobniTelefon <tel:"+420.123.159.690">.
+sport:2 a sp:Sportovec ;
+    foaf:givenName "Jakub"@cs-CZ ;
+    foaf:familyName "Hroník"@cs-CZ ;
+    sp:opravnen lok:2 .
+    sport:2 sp:osobniTelefon <tel:"+420.951.357.456">.
+lok:3 a sp:Lokace;
+    sp:nazev "Hřiště"@cs-CZ;
+    sp:plocha "500"^^xsd:float;
+    sp:kapacita "120"^^xsd:unsignedInt;
+    sp:kryje kr:3;
+    sp:povrch po:3.
+    
+    
+kr:3 a sp:Kryti;
+    sp:nazev " Magická střecha"@cs-CZ;
+    sp:popis "Je to magie no"@cs-CZ;
+    sp:urovenKryti "0"^^xsd:float.
+    
+
+po:3 a sp:Povrch;
+    sp:nazev "Tráva"@cs-CZ;
+
+ud:1 a sp:Udalost ;
+    sp:nazev "Hustá událost"@cs-CZ ;
+    sp:datum "2077-07-07"^^xsd:date ;
+    sp:od "18:00:00"^^xsd:time ;
+    sp:do "21:00:00"^^xsd:time ;
+    sp:lokace lok:3.
+
+                zam:1 a sp:Zamestnanec ;
+    foaf:givenName "Valerie"@cs-CZ ;
+    foaf:familyName "Kurinnaya"@cs-CZ ;            
+    sp:mzda "400"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:1 sp:pracovniTelefon <tel:"+380.97.514.63.00">.
+
+ud:1 sp:organizovan zam:1.
+
+                zam:2 a sp:Zamestnanec ;
+    foaf:givenName "Jean"@en-US ;
+    foaf:familyName "Gunnhildr"@en-US ;            
+    sp:mzda "450"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:2 sp:pracovniTelefon <tel:"+420.123.321.000">.
+
+ud:1 sp:organizovan zam:2.
+
+            
+ud:8 a sp:Udalost ;
+    sp:nazev "Turnaj - Volejbal"@cs-CZ ;
+    sp:datum "2022-10-10"^^xsd:date ;
+    sp:od "12:30:00"^^xsd:time ;
+    sp:do "15:00:00"^^xsd:time ;
+    sp:lokace lok:3.
+
+                zam:1 a sp:Zamestnanec ;
+    foaf:givenName "Valerie"@cs-CZ ;
+    foaf:familyName "Kurinnaya"@cs-CZ ;            
+    sp:mzda "400"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:1 sp:pracovniTelefon <tel:"+380.97.514.63.00">.
+
+ud:8 sp:organizovan zam:1.
+
+                zam:4 a sp:Zamestnanec ;
+    foaf:givenName "Jan"@cs-CZ ;
+    foaf:familyName "Lenivý"@cs-CZ ;            
+    sp:mzda "150"^^xsd:decimal ;
+    sp:aktivni true .
+    zam:4 sp:pracovniTelefon <tel:"+420.774.066.035">.
+
+ud:8 sp:organizovan zam:4.
+
+            sport:2 a sp:Sportovec ;
+    foaf:givenName "Jakub"@cs-CZ ;
+    foaf:familyName "Hroník"@cs-CZ ;
+    sp:opravnen lok:3 .
+    sport:2 sp:osobniTelefon <tel:"+420.951.357.456">.

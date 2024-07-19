@@ -1,0 +1,15 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/povrch.schema.json",
+    "title": "Povrch",
+    "description": "Typ pokrytí v určitých lokacich",
+    "type": "object",
+    "properties": {
+        "nazev": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "nazev"
+    ]
+}

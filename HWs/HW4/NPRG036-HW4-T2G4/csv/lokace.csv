@@ -1,0 +1,4 @@
+uri,nazev,plocha,kapacita,kryti_uri,povrch_uri
+http://nasesportoviste.cz/lokace/1,Velká hala,420,69,http://nasesportoviste.cz/kryti/1,http://nasesportoviste.cz/slovnik/povrch/1
+http://nasesportoviste.cz/lokace/2,Malá hala,100,40,http://nasesportoviste.cz/kryti/2,http://nasesportoviste.cz/slovnik/povrch/2
+http://nasesportoviste.cz/lokace/3,Hřiště,500,120,http://nasesportoviste.cz/kryti/3,http://nasesportoviste.cz/slovnik/povrch/3

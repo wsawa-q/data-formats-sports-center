@@ -1,0 +1,3 @@
+'Přehled zaměstnanců organizujících události 2022-10-10 jež se konají v lokaci s krytím < 1'
+
+distinct-values(/SportovníStředisko/DostupnéLokace/Lokace[Krytí/ÚroveňKrytí < 1.0]/Události/Událost[Datum = '2022-10-10']/Organizátoři/Zaměstnanec)

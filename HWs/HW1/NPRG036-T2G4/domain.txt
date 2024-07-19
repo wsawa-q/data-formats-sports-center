@@ -1,0 +1,41 @@
+Group: T2G4
+Members: Jakub Hroník, Tomáš Strnad, Yervand Arzumanyan, Valeriia Kurinna
+
+Popis:	Sportovní středisko
+
+Sportovní středisko je rozděleno na několik lokací.
+
+Lokace:
+Každá lokace je daná názvem, plochou a kapacitou osob. Každá lokace má povrch a střešní krytí.
+
+Povrch:
+Povrch je určen názvem. Povrch je to po čem se sportovci v lokacích pohybují během aktivit.
+
+Krytí:
+Krytí je brané jakožto střešní krytí, které je dané názvem, popisem a úrovní krytí.
+Úroveň krytí je procentuelní úroveň toho, jak moc dané krytí kryje před venkovním prostředí (déšt, slunce,...). 0 % -> žádné krytí, 100 % -> úplné krytí
+
+Osoba:
+Osoba je člověk s daným jménem a příjmením.
+Každá osoba může mít libovolný počet telefonních čísel (včetně 0).
+
+Sportovec:
+Sportovec je osoba, která chodí do střediska jako zákazník.
+Sportovci mohou – ale nemusí – mít přidělené přístupová práva k nějaké lokaci, stejně jako lokace může zůstat bez povolených sportovců (např., pokud je zavřená).
+
+Rozvrh:
+Rozvrh udává režim otvírací doby dané lokality.
+Každá lokace je otevřená dle různých rozvrhů kde je popsán každý den v týdnu. V rozvrhu je take popsan časový interval.
+
+Událost:
+Událost je daná názvem, datem konání, časovým intervalem a lokací. Určuje co se kdy a kde v areálu koná.
+Každá událost musí mít přiřazeného alespoň jednoho aktivního zaměstnance.
+Na jedné lokaci se může konat několik události zároveň.
+
+Zaměstnanec:
+Zaměstnanec je osoba, která ve středisku pracuje nebo někdy pracovala.
+Každý zaměstnanec má svojí mzdu a pracovní telefonní číslo.
+Každý zaměstnanec je buď aktivní (má podepsanou smlouvu) nebo neaktivní (už ve středisku nepracuje).
+
+
+Do areálu sportovního střediska mohou vstupovat pouze zaměstnanci nebo sportovci.

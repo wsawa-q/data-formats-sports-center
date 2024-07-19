@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/udalost.schema.json",
+    "title": "Událost",
+    "description": "Nějaká událost, která se odehrává na určité lokace v určitou dobu",
+    "type": "object",
+    "properties": {
+        "nazev": {
+            "type": "string"
+        },
+        "datum": {
+            "type": "string",
+            "pattern": "^[1-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]$"
+        },
+        "interval": {
+            "$ref": "http://nasesportoviste.cz/interval.schema.json"
+        },
+        "lokace": {
+            "$ref": "http://nasesportoviste.cz/lokace.schema.json"
+        },
+        "organizovan": {
+            "type": "array",
+            "items": {
+                "$ref": "http://nasesportoviste.cz/zamestnanec.schema.json"
+            }
+        }
+    },
+    "required": [
+        "nazev",
+        "datum",
+        "interval",
+        "lokace",
+        "organizovan"
+    ]
+}

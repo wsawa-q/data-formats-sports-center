@@ -1,0 +1,3 @@
+'Průměrná pravidelná otevírací doba v minutách napříč všemi lokacemi'
+
+fn:avg(/SportovníStředisko/DostupnéLokace/Lokace/PravidelnýRozvrh ! fn:sum(Rozvrh ! ((fn:minutes-from-duration(xs:time(Do) - xs:time(Od))  + (60*fn:hours-from-duration(xs:time(Do) - xs:time(Od)) )))))

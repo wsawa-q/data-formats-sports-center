@@ -1,0 +1,30 @@
+PREFIX sp: <http://nasesportoviste.cz/slovnik/>
+PREFIX lok: <http://nasesportoviste.cz/lokace/>
+PREFIX kr: <http://nasesportoviste.cz/kryti/>
+PREFIX po: <http://nasesportoviste.cz/povrch/>
+PREFIX ro: <http://nasesportoviste.cz/rozvrh/>
+PREFIX ud: <http://nasesportoviste.cz/udalost/>
+PREFIX zam: <http://nasesportoviste.cz/zamestnanec/>
+PREFIX sport: <http://nasesportoviste.cz/sportovec/>
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX proton: <http://www.ontotext.com/proton/protontop#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+
+# Výpis lokací, které mají pravidelně otevřeno více než 25 hodin týdně
+
+select  ?name SUM(?h)
+WHERE {
+?l a sp:Lokace ;
+      sp:rozvrh ?r;
+      sp:locationName ?name.
+?r a sp:Rozvrh;
+   sp:den ?day;
+   sp:od ?od;
+   sp:do ?do.
+BIND( hours(?do) - hours(?od) + minutes(?do)/60.0 - minutes(?od)/60.0 as ?h)
+} GROUP BY ?l ?name
+HAVING(SUM(?h) > 25)

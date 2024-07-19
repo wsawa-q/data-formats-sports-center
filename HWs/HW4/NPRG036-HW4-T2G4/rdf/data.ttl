@@ -1,0 +1,228 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://nasesportoviste.cz/kryti/1> a <http://nasesportoviste.cz/kryti>;
+  <http://nasesportoviste.cz/slovnik/nazev> "Úplna střech";
+  <http://nasesportoviste.cz/slovnik/popis> "Nejlepší střecha na světě";
+  <http://nasesportoviste.cz/slovnik/urovenKryti> "1"^^xsd:float .
+
+<http://nasesportoviste.cz/kryti/2> a <http://nasesportoviste.cz/kryti>;
+  <http://nasesportoviste.cz/slovnik/nazev> "Poloviční střecha";
+  <http://nasesportoviste.cz/slovnik/popis> "Nejlepší střecha na světě";
+  <http://nasesportoviste.cz/slovnik/urovenKryti> "0.5"^^xsd:float .
+
+<http://nasesportoviste.cz/kryti/3> a <http://nasesportoviste.cz/kryti>;
+  <http://nasesportoviste.cz/slovnik/nazev> "Magická střecha";
+  <http://nasesportoviste.cz/slovnik/popis> "Je to magie no...";
+  <http://nasesportoviste.cz/slovnik/urovenKryti> "0"^^xsd:float .
+
+<http://nasesportoviste.cz/osoba/1> a <http://nasesportoviste.cz/Osoba>,
+    <http://nasesportoviste.cz/Zamestnanec>;
+  <http://nasesportoviste.cz/aktivni> false;
+  <http://nasesportoviste.cz/mzda> "50";
+  <http://nasesportoviste.cz/pracovniTelefon> "+380 97 545 63 00";
+  foaf:familyName "Kurinnaya";
+  foaf:givenName "Valerie" .
+
+<http://nasesportoviste.cz/osoba/2> a <http://nasesportoviste.cz/Osoba>,
+    <http://nasesportoviste.cz/Zamestnanec>;
+  <http://nasesportoviste.cz/aktivni> true;
+  <http://nasesportoviste.cz/mzda> "450";
+  <http://nasesportoviste.cz/pracovniTelefon> "+420 123 321 000";
+  foaf:familyName "Gunnhildr";
+  foaf:givenName "Jean" .
+
+<http://nasesportoviste.cz/osoba/3> a <http://nasesportoviste.cz/Osoba>,
+    <http://nasesportoviste.cz/Sportovec>;
+  <http://nasesportoviste.cz/opravnen> <http://nasesportoviste.cz/lokace/1>,
+    <http://nasesportoviste.cz/lokace/2>;
+  foaf:familyName "Dodoco";
+  foaf:givenName "Klee" .
+
+<http://nasesportoviste.cz/osoba/4> a <http://nasesportoviste.cz/Osoba>,
+    <http://nasesportoviste.cz/Zamestnanec>;
+  <http://nasesportoviste.cz/aktivni> true;
+  <http://nasesportoviste.cz/mzda> "150";
+  <http://nasesportoviste.cz/pracovniTelefon> "+420 774 066 035";
+  foaf:familyName "Lenivý";
+  foaf:givenName "Jan" .
+
+<http://nasesportoviste.cz/osoba/5> a <http://nasesportoviste.cz/Osoba>,
+    <http://nasesportoviste.cz/Zamestnanec>;
+  <http://nasesportoviste.cz/aktivni> true;
+  <http://nasesportoviste.cz/mzda> "400";
+  <http://nasesportoviste.cz/osobniTelefon> "+420 753 159 789",
+    "+420 123 159 690";
+  <http://nasesportoviste.cz/pracovniTelefon> "+380 97 514 63 00";
+  foaf:familyName "Strnad";
+  foaf:givenName "Tomáš" .
+
+<http://nasesportoviste.cz/osoba/6> a <http://nasesportoviste.cz/Osoba>,
+    <http://nasesportoviste.cz/Sportovec>;
+  <http://nasesportoviste.cz/opravnen> <http://nasesportoviste.cz/lokace/2>,
+    <http://nasesportoviste.cz/lokace/3>;
+  <http://nasesportoviste.cz/osobniTelefon> "+420 951 357 456";
+  foaf:familyName "Hroník";
+  foaf:givenName "Jakub" .
+
+<http://nasesportoviste.cz/osoba/7> a <http://nasesportoviste.cz/Osoba>,
+    <http://nasesportoviste.cz/Sportovec>;
+  <http://nasesportoviste.cz/opravnen> <http://nasesportoviste.cz/lokace/2>;
+  <http://nasesportoviste.cz/osobniTelefon> "+420 159 753 123";
+  foaf:familyName "Arzumanyan";
+  foaf:givenName "Yervand" .
+
+<http://nasesportoviste.cz/povrch/1> a <http://nasesportoviste.cz/povrch>;
+  <http://nasesportoviste.cz/slovnik/nazev> "Parket" .
+
+<http://nasesportoviste.cz/povrch/2> a <http://nasesportoviste.cz/povrch>;
+  <http://nasesportoviste.cz/slovnik/nazev> "Uměla trava" .
+
+<http://nasesportoviste.cz/povrch/3> a <http://nasesportoviste.cz/povrch>;
+  <http://nasesportoviste.cz/slovnik/nazev> "Trava" .
+
+<http://nasesportoviste.cz/rozvrh/1> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 0;
+  <http://nasesportoviste.cz/slovnik/do> "23:59:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "00:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/10> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 6;
+  <http://nasesportoviste.cz/slovnik/do> "06:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "00:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/11> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 6;
+  <http://nasesportoviste.cz/slovnik/do> "18:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "08:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/2> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 1;
+  <http://nasesportoviste.cz/slovnik/do> "18:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/3> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 2;
+  <http://nasesportoviste.cz/slovnik/do> "18:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/4> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 3;
+  <http://nasesportoviste.cz/slovnik/do> "18:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/5> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 3;
+  <http://nasesportoviste.cz/slovnik/do> "21:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "09:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/6> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 3;
+  <http://nasesportoviste.cz/slovnik/do> "21:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "09:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/7> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 4;
+  <http://nasesportoviste.cz/slovnik/do> "18:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/8> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 5;
+  <http://nasesportoviste.cz/slovnik/do> "17:30:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/rozvrh/9> a <http://nasesportoviste.cz/rozvrh>;
+  <http://nasesportoviste.cz/slovnik/den> 5;
+  <http://nasesportoviste.cz/slovnik/do> "21:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/od> "09:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/udalost/1> a <http://nasesportoviste.cz/udalost>;
+  <http://nasesportoviste.cz/organizovan> <http://nasesportoviste.cz/zamestnanec/1>,
+    <http://nasesportoviste.cz/zamestnanec/2>;
+  <http://nasesportoviste.cz/slovnik/datum> "2077-07-07"^^xsd:date;
+  <http://nasesportoviste.cz/slovnik/do> "21:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/konana> "http://nasesportoviste.cz/lokace/1"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Hustá událost";
+  <http://nasesportoviste.cz/slovnik/od> "18:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/udalost/2> a <http://nasesportoviste.cz/udalost>;
+  <http://nasesportoviste.cz/organizovan> <http://nasesportoviste.cz/zamestnanec/1>,
+    <http://nasesportoviste.cz/zamestnanec/3>;
+  <http://nasesportoviste.cz/slovnik/datum> "2022-02-28"^^xsd:date;
+  <http://nasesportoviste.cz/slovnik/do> "23:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/konana> "http://nasesportoviste.cz/lokace/3"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Velká událost 1";
+  <http://nasesportoviste.cz/slovnik/od> "15:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/udalost/3> a <http://nasesportoviste.cz/udalost>;
+  <http://nasesportoviste.cz/organizovan> <http://nasesportoviste.cz/zamestnanec/1>,
+    <http://nasesportoviste.cz/zamestnanec/2>,
+    <http://nasesportoviste.cz/zamestnanec/4>;
+  <http://nasesportoviste.cz/slovnik/datum> "2022-03-01"^^xsd:date;
+  <http://nasesportoviste.cz/slovnik/do> "18:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/konana> "http://nasesportoviste.cz/lokace/3"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Velká událost 2";
+  <http://nasesportoviste.cz/slovnik/od> "00:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/udalost/4> a <http://nasesportoviste.cz/udalost>;
+  <http://nasesportoviste.cz/organizovan> <http://nasesportoviste.cz/zamestnanec/2>;
+  <http://nasesportoviste.cz/slovnik/datum> "2077-07-07"^^xsd:date;
+  <http://nasesportoviste.cz/slovnik/do> "12:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/konana> "http://nasesportoviste.cz/lokace/1"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Malá událost";
+  <http://nasesportoviste.cz/slovnik/od> "07:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/udalost/5> a <http://nasesportoviste.cz/udalost>;
+  <http://nasesportoviste.cz/organizovan> <http://nasesportoviste.cz/zamestnanec/1>;
+  <http://nasesportoviste.cz/slovnik/datum> "2022-10-10"^^xsd:date;
+  <http://nasesportoviste.cz/slovnik/do> "21:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/konana> "http://nasesportoviste.cz/lokace/2"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Turnaj - Futsal";
+  <http://nasesportoviste.cz/slovnik/od> "18:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/udalost/6> a <http://nasesportoviste.cz/udalost>;
+  <http://nasesportoviste.cz/organizovan> <http://nasesportoviste.cz/zamestnanec/2>;
+  <http://nasesportoviste.cz/slovnik/datum> "2022-10-10"^^xsd:date;
+  <http://nasesportoviste.cz/slovnik/do> "21:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/konana> "http://nasesportoviste.cz/lokace/1"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Turnaj - Tenis";
+  <http://nasesportoviste.cz/slovnik/od> "18:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/udalost/7> a <http://nasesportoviste.cz/udalost>;
+  <http://nasesportoviste.cz/organizovan> <http://nasesportoviste.cz/zamestnanec/3>;
+  <http://nasesportoviste.cz/slovnik/datum> "2017-12-10"^^xsd:date;
+  <http://nasesportoviste.cz/slovnik/do> "21:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/konana> "http://nasesportoviste.cz/lokace/2"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Basketbal";
+  <http://nasesportoviste.cz/slovnik/od> "18:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/udalost/8> a <http://nasesportoviste.cz/udalost>;
+  <http://nasesportoviste.cz/organizovan> <http://nasesportoviste.cz/zamestnanec/1>,
+    <http://nasesportoviste.cz/zamestnanec/4>;
+  <http://nasesportoviste.cz/slovnik/datum> "2018-12-10"^^xsd:date;
+  <http://nasesportoviste.cz/slovnik/do> "21:00:00"^^xsd:time;
+  <http://nasesportoviste.cz/slovnik/konana> "http://nasesportoviste.cz/lokace/1"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Turnaj - Volejbal";
+  <http://nasesportoviste.cz/slovnik/od> "18:00:00"^^xsd:time .
+
+<http://nasesportoviste.cz/lokace/1> a <http://nasesportoviste.cz/lokace>;
+  <http://nasesportoviste.cz/slovnik/kapacita> 69;
+  <http://nasesportoviste.cz/slovnik/kryje> "http://nasesportoviste.cz/kryti/1"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Velká hala";
+  <http://nasesportoviste.cz/slovnik/plocha> "420"^^xsd:float;
+  <http://nasesportoviste.cz/slovnik/pokryta> "http://nasesportoviste.cz/slovnik/povrch/1"^^xsd:anyURI .
+
+<http://nasesportoviste.cz/lokace/3> a <http://nasesportoviste.cz/lokace>;
+  <http://nasesportoviste.cz/slovnik/kapacita> 120;
+  <http://nasesportoviste.cz/slovnik/kryje> "http://nasesportoviste.cz/kryti/3"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Hřiště";
+  <http://nasesportoviste.cz/slovnik/plocha> "500"^^xsd:float;
+  <http://nasesportoviste.cz/slovnik/pokryta> "http://nasesportoviste.cz/slovnik/povrch/3"^^xsd:anyURI .
+
+<http://nasesportoviste.cz/lokace/2> a <http://nasesportoviste.cz/lokace>;
+  <http://nasesportoviste.cz/slovnik/kapacita> 40;
+  <http://nasesportoviste.cz/slovnik/kryje> "http://nasesportoviste.cz/kryti/2"^^xsd:anyURI;
+  <http://nasesportoviste.cz/slovnik/nazev> "Malá hala";
+  <http://nasesportoviste.cz/slovnik/plocha> "100"^^xsd:float;
+  <http://nasesportoviste.cz/slovnik/pokryta> "http://nasesportoviste.cz/slovnik/povrch/2"^^xsd:anyURI .

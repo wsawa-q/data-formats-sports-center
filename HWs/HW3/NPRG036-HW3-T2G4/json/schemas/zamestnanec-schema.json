@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://nasesportoviste.cz/zamestnanec.schema.json",
+    "title": "Zamestnanec",
+    "description": "Osoba, která pracuje ve sportovním středisku",
+    "type": "object",
+    "properties": {
+        "osoba": {
+            "$ref": "http://nasesportoviste.cz/osoba.schema.json"
+        },
+        "pracovniTelefon": {
+            "$ref": "http://nasesportoviste.cz/telefon.schema.json"
+        },
+        "mzda": {
+            "type": "number",
+            "exclusiveMinimum": 0
+        },
+        "aktivni": {
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "osoba",
+        "pracovniTelefon",
+        "mzda",
+        "aktivni"
+    ]
+}

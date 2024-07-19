@@ -1,0 +1,9 @@
+uri,nazev,date,od,do,lokace_uri
+http://nasesportoviste.cz/udalost/1,Hustá událost,2077-07-07,18:00:00,21:00:00,http://nasesportoviste.cz/lokace/1
+http://nasesportoviste.cz/udalost/2,Velká událost 1,2022-02-28,15:00:00,23:00:00,http://nasesportoviste.cz/lokace/3
+http://nasesportoviste.cz/udalost/3,Velká událost 2,2022-03-01,00:00:00,18:00:00,http://nasesportoviste.cz/lokace/3
+http://nasesportoviste.cz/udalost/4,Malá událost,2077-07-07,07:00:00,12:00:00,http://nasesportoviste.cz/lokace/1
+http://nasesportoviste.cz/udalost/5,Turnaj - Futsal,2022-10-10,18:00:00,21:00:00,http://nasesportoviste.cz/lokace/2
+http://nasesportoviste.cz/udalost/6,Turnaj - Tenis,2022-10-10,18:00:00,21:00:00,http://nasesportoviste.cz/lokace/1
+http://nasesportoviste.cz/udalost/7,Basketbal,2017-12-10,18:00:00,21:00:00,http://nasesportoviste.cz/lokace/2
+http://nasesportoviste.cz/udalost/8,Turnaj - Volejbal,2018-12-10,18:00:00,21:00:00,http://nasesportoviste.cz/lokace/1

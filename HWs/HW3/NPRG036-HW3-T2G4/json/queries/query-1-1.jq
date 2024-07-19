@@ -1,0 +1,1 @@
+jq '[ .[]."@type"="sp:lok" | .[]."sp:plocha"."@value" | select(. != null) ] | add'

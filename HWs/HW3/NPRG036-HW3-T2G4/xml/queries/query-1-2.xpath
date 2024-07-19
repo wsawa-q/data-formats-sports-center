@@ -1,0 +1,3 @@
+'Seznam všech měn kterými jsou vypláceni zaměstnanci'
+
+distinct-values(/SportovníStředisko/DostupnéLokace/Lokace/(Události/Událost | PravidelnýRozvrh/Rozvrh)/Organizátoři/Zaměstnanec/Mzda/@měna)

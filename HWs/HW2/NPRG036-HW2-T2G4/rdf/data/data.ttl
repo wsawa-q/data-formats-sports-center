@@ -1,0 +1,393 @@
+@prefix sp: <http://nasesportoviste.cz/slovnik/> .
+@prefix lok: <http://nasesportoviste.cz/lokace/> .
+@prefix kr: <http://nasesportoviste.cz/kryti/> .
+@prefix po: <http://nasesportoviste.cz/povrch/> .
+@prefix ro: <http://nasesportoviste.cz/rozvrh/> .
+@prefix ud: <http://nasesportoviste.cz/udalost/> .
+@prefix zam: <http://nasesportoviste.cz/zamestnanec/> .
+@prefix sport: <http://nasesportoviste.cz/sportovec/> .
+
+
+
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix proton: <http://www.ontotext.com/proton/protontop#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# VLASTNI SLOVNIK
+sp:Osoba rdf:type rdfs:Class ;
+    rdfs:label "Osoba"@cs ;
+    rdfs:comment "Nějaký člověk, ať je to zamestnanec sportovního střediska nebo sportovec"@cs .
+sp:Osoba rdfs:subClassOf foaf:Person .
+
+sp:telefon rdf:type rdf:Property ;
+    rdfs:label "telefon"@cs ;
+    rdfs:comment "telefonní číslo, jedna z metod identifikace osoby"@cs .
+sp:telefon rdfs:subPropertyOf foaf:phone .
+
+sp:osobniTelefon rdf:type rdf:Property .
+    rdfs:label "osobni telefon"@cs ;
+    rdfs:comment "osobní telefonní číslo, jedna z metod identifikace osoby, které má každá osoba"@cs .
+sp:osobniTelefon rdfs:subPropertyOf sp:telefon .
+
+sp:pracovniTelefon rdf:type rdf:Property .
+    rdfs:label "pracovni telefon"@cs ;
+    rdfs:comment "pracovni telefonní číslo, které má každý zaměstnanec"@cs .
+sp:pracovniTelefon rdfs:subPropertyOf sp:telefon .
+
+sp:mzda rdf:type rdf:Property .
+    rdfs:label "mzda"@cs ;
+    rdfs:comment "měsíční mzda zaměstnance"@cs .
+sp:mzda rdfs:range xsd:decimal .
+
+sp:aktivni rdf:type rdf:Property .
+    rdfs:label "aktivni"@cs ;
+    rdfs:comment "status zamestnance, pomocí kterého lze zjistit, zda právě pracuje a je fyzicky přítomen, neni na dovolené nebo služební cestě"@cs .
+sp:aktivni rdf:range xsd:boolean .
+
+sp:Zamestnanec rdf:type rdfs:Class ;
+    rdfs:label "Zaměstnanec"@cs ;
+    rdfs:comment "Osoba, která pracuje ve sportovním středisku"@cs .
+sp:Zamestnanec rdfs:subClassOf sp:Osoba .
+
+sp:Sportovec rdf:type rdfs:Class .
+    rdfs:label "Sportovec"@cs ;
+    rdfs:comment "Osoba, která přichází využít služby sportovního střediska"@cs .
+sp:Sportovec rdfs:subClassOf sp:Osoba .
+
+sp:Lokace rdf:type rdfs:Class ;
+    rdfs:label "Lokace"@cs ;
+    rdfs:comment "Místo, kde pracují zaměstnance a sportují sportovce, kde prochází různé události"@cs .
+sp:Lokace rdfs:subClassOf proton:Location .
+
+sp:plocha rdf:type rdfs:Class .
+    rdfs:label "Plocha"@cs ;
+    rdfs:comment "Číslo, které určuje, jak je velká plocha lokace"@cs .
+sp:plocha rdfs:range xsd:float .
+
+sp:kapacita rdf:type rdfs:Class .
+    rdfs:label "Kapacita"@cs ;
+    rdfs:comment "Maximální počet sportovců, který vejde do konkrétního umístění"@cs .
+sp:kapacita rdfs:range xsd:unsignedInt .
+
+sp:nazev rdf:type rdf:Property .
+    rdfs:label "nazev"@cs ;
+    rdfs:comment "nazev, pomocí kterého lze identifikovat konkrétní místo ve sportovním středisku nebo prvky v něm přítomné"@cs .
+sp:nazev rdfs:subPropertyOf foaf:name .
+
+sp:popis rdf:type rdf:Property .
+    rdfs:label "popis"@cs ;
+    rdfs:comment "popis lokace nebo kryti, který popisuje, jak vypadá, k čemu slouží atp."@cs .
+sp:popis rdfs:subPropertyOf proton:description .
+
+sp:Kryti rdf:type rdfs:Class .
+    rdfs:label "kryti"@cs ;
+    rdfs:comment "typ krytí v určitých lokacich"@cs .
+
+sp:urovenKryti rdf:type rdf:Property .
+    rdfs:label "uroven kryti"@cs ;
+    rdfs:comment "číslo, které určuje, jak je lokace pokryta"@cs .
+sp:urovenKryti rdfs:range xsd:float .
+sp:urovenKryti rdfs:domain sp:Kryti
+
+sp:Povrch rdf:type rdfs:Class .
+    rdfs:label "Povrch"@cs ;
+    rdfs:comment "typ pokrytí v určitých lokacich"@cs .
+
+sp:Rozvrh rdf:type rdfs:Class .
+    rdfs:label "Rozvrh"@cs ;
+    rdfs:comment "Rozvrh, podle kterého pracují různé lokace v sportovním středisku"@cs .
+
+sp:Udalost rdf:type rdfs:Class .
+    rdfs:label "Udalost"@cs ;
+    rdfs:comment "Nějaká událost, která se odehrává na určité lokace v určitou dobu"@cs .
+
+sp:den rdf:type rdf:Property .
+    rdfs:label "den"@cs ;
+    rdfs:comment "den v tydnu: ponděli, úteri..."@cs .
+sp:den rdfs:range xsd:unsignedInt .
+
+sp:cas rdf:type rdf:Property .
+    rdfs:label "cas"@cs ;
+    rdfs:comment "čás standartní, určuje čás"@cs .
+sp:cas rdf:range xsd:time .
+
+sp:od rdf:type rdf:Property .
+    rdfs:label "od"@cs ;
+    rdfs:comment "čas, kdy něco začíná"@cs .
+sp:od rdfs:subPropertyOf sp:cas .
+
+sp:do rdf:type rdf:Property .
+    rdfs:label "do"@cs ;
+    rdfs:comment "čas, kdy něco končí"@cs .
+sp:do rdfs:subPropertyOf sp:cas .
+
+sp:datum rdf:type rdf:Property .
+    rdfs:label "datum"@cs ;
+    rdfs:comment "datum kdy odehrává určitá událost"@cs .
+sp:datum rdfs:range xsd:date .
+
+sp:organizovan rdf:type rdf:Property ;
+    rdfs:label "organizovan"@cs ;
+    rdfs:comment "událost organizovaná určitým zaměstnancem"@cs ;
+    rdfs:range sp:Zamestnanec ;
+    rdfs:domain sp:Udalost .
+
+sp:opravnen rdf:type rdf:Property ;
+    rdfs:label "opravnen"@cs ;
+    rdfs:comment "určitý sportovec má opravneni vstupovát na nějaké lokace"@cs ;
+	rdfs:range sp:Lokace ;
+	rdfs:domain sp:Sportovec .
+
+
+### LOKACE ###
+lok:1 a sp:Lokace ;
+    sp:nazev "Velká hala"@cs ;
+    sp:plocha "420"^^xsd:float ;
+    sp:kapacita "69"^^xsd:unsignedInt ;
+    sp:kryje kr:1 ;
+    sp:povrch po:2 ;
+    sp:rozvrh ro:1 , ro:2 , ro:3 , ro:4 , ro:6 , ro:7 , ro:9 .
+
+lok:2 a sp:Lokace ;
+    sp:nazev "Malá hala"@cs ;
+    sp:plocha "100"^^xsd:float ;
+    sp:kapacita "40"^^xsd:unsignedInt ;
+    sp:kryje kr:2 ;
+    sp:povrch po:1 ;
+    sp:rozvrh ro:1 , ro:2 , ro:3 , ro:5 , ro:6 , ro:8 , ro:9 .
+
+lok:3 a sp:Lokace ;
+    sp:nazev "Hřiště"@cs ;
+    sp:plocha "500"^^xsd:float ;
+    sp:kapacita "120"^^xsd:unsignedInt ;
+    sp:kryje kr:3 ;
+    sp:povrch po:3 ;
+    sp:rozvrh ro:10, ro:11.
+
+### KRYTI ###
+kr:1 a sp:Kryti ;
+    sp:nazev "Úplna střecha"@cs ;
+    sp:popis "Nejlepší střecha na světě"@cs ;
+    sp:urovenKryti "1"^^xsd:float .
+
+kr:2 a sp:Kryti ;
+    sp:nazev "Poloviční střecha"@cs ;
+    sp:popis "Nejlepší střecha na světě"@cs ;
+    sp:urovenKryti "0.5"^^xsd:float .
+
+kr:3 a sp:Kryti ;
+    sp:nazev "Magická střecha"@cs ;
+    sp:popis "Je to magie no..."@cs ;
+    sp:urovenKryti "0"^^xsd:float .
+
+### POVRCH ###
+po:1 a sp:Povrch ;
+    sp:nazev "Parket"@cs .
+
+po:2 a sp:Povrch ;
+    sp:nazev "Uměla trava"@cs .
+
+po:3 a sp:Povrch ;
+    sp:nazev "Trava"@cs .
+
+### ROZVRCH ###
+# Sunday
+ro:1 a sp:Rozvrh ;
+    sp:den "0"^^xsd:unsignedInt ;
+    sp:od "00:00"^^xsd:time ;
+    sp:do "23:59"^^xsd:time .
+
+# Monday
+ro:2 a sp:Rozvrh ;
+    sp:den "1"^^xsd:unsignedInt ;
+    sp:od "07:00"^^xsd:time ;
+    sp:do "18:00"^^xsd:time .
+
+# Tuesday
+ro:3 a sp:Rozvrh ;
+    sp:den "2"^^xsd:unsignedInt ;
+    sp:od "07:00"^^xsd:time ;
+    sp:do "18:00"^^xsd:time .
+
+# Wednesday
+ro:4 a sp:Rozvrh ;
+    sp:den "3"^^xsd:unsignedInt ;
+    sp:od "07:00"^^xsd:time ;
+    sp:do "18:00"^^xsd:time .
+
+ro:5 a sp:Rozvrh ;
+    sp:den "3"^^xsd:unsignedInt ;
+    sp:od "09:00"^^xsd:time ;
+    sp:do "21:00"^^xsd:time .
+
+ro:11 a sp:Rozvrh;
+    sp:den "3"^^xsd:unsignedInt ;
+    sp:od "09:00"^^xsd:time ;
+    sp:do "21:00"^^xsd:time .
+
+# Thursday
+ro:6 a sp:Rozvrh ;
+    sp:den "4"^^xsd:unsignedInt ;
+    sp:od "07:00"^^xsd:time ;
+    sp:do "18:00"^^xsd:time .
+
+# Friday
+ro:7 a sp:Rozvrh ;
+    sp:den "5"^^xsd:unsignedInt ;
+    sp:od "07:00"^^xsd:time ;
+    sp:do "17:30"^^xsd:time .
+
+ro:8 a sp:Rozvrh ;
+    sp:den "5"^^xsd:unsignedInt ;
+    sp:od "09:00"^^xsd:time ;
+    sp:do "21:00"^^xsd:time .
+
+# Saturday
+ro:9 a sp:Rozvrh ;
+    sp:den "6"^^xsd:unsignedInt ;
+    sp:od "00:00"^^xsd:time ;
+    sp:do "06:00"^^xsd:time .
+
+ro:10 a sp:Rozvrh ;
+    sp:den "6"^^xsd:unsignedInt ;
+    sp:od "08:00"^^xsd:time ;
+    sp:do "18:00"^^xsd:time .
+
+### UDALOST ###
+ud:1 a sp:Udalost ;
+    sp:nazev "Hustá událost"@cs ;
+    sp:datum "2077-07-07"^^xsd:date ;
+    sp:od "18:00"^^xsd:time ;
+    sp:do "21:00"^^xsd:time ;
+    sp:lokace lok:3 .
+
+ud:2 a sp:Udalost ;
+    sp:nazev "Velká událost 1"@cs ;
+    sp:datum "2022-02-28"^^xsd:date ;
+    sp:od "15:00"^^xsd:time ;
+    sp:do "23:59"^^xsd:time ;
+    sp:lokace lok:2 .
+
+ud:3 a sp:Udalost ;
+    sp:nazev "Velká událost 2"@cs ;
+    sp:datum "2022-03-01"^^xsd:date ;
+    sp:od "00:00"^^xsd:time ;
+    sp:do "18:00"^^xsd:time ;
+    sp:lokace lok:2 .
+
+ud:4 a sp:Udalost ;
+    sp:nazev "Malá událost"@cs ;
+    sp:datum "2077-07-07"^^xsd:date ;
+    sp:od "00:00"^^xsd:time ;
+    sp:do "06:00"^^xsd:time ;
+    sp:lokace lok:1 .
+
+ud:5 a sp:Udalost ;
+    sp:nazev "Turnaj - Futsal"@cs ;
+    sp:datum "2022-10-10"^^xsd:date ;
+    sp:od "07:00"^^xsd:time ;
+    sp:do "12:00"^^xsd:time ;
+    sp:lokace lok:1 .
+
+
+ud:6 a sp:Udalost ;
+    sp:nazev "Turnaj - Tenis"@cs ;
+    sp:datum "2022-10-10"^^xsd:date ;
+    sp:od "07:00"^^xsd:time ;
+    sp:do "12:00"^^xsd:time ;
+    sp:lokace lok:2 .
+
+ud:7 a sp:Udalost ;
+    sp:nazev "Basketbal"@cs ;
+    sp:datum "2017-12-10"^^xsd:date ;
+    sp:od "07:00"^^xsd:time ;
+    sp:do "12:00"^^xsd:time ;
+    sp:lokace lok:2 .
+
+ud:7 a sp:Udalost ;
+      sp:nazev "Basketbal"@cs ;
+      sp:datum "2017-12-10"^^xsd:date ;
+      sp:od "07:00"^^xsd:time ;
+      sp:do "12:00"^^xsd:time ;
+      sp:lokace lok:2 .
+
+ud:8 a sp:Udalost ;
+      sp:nazev "Turnaj - Volejbal"@cs ;
+      sp:datum "2022-10-10"^^xsd:date ;
+      sp:od "12:30"^^xsd:time ;
+      sp:do "15:00"^^xsd:time ;
+      sp:lokace lok:3 .
+
+### ZAMESTNANCI ###
+zam:1 a sp:Zamestnanec ;
+    foaf:givenName "Valerie"@cs ;
+    foaf:familyName "Kurinnaya"@cs ;
+    sp:pracovniTelefon <tel:+380.97.514.63.00> ;
+    sp:mzda "400"^^xsd:decimal ;
+    sp:aktivni true .
+
+zam:2 a sp:Zamestnanec ;
+    foaf:givenName "Jean"@en ;
+    foaf:familyName "Gunnhildr"@en ;
+    sp:pracovniTelefon <tel:+420.123.321.000> ;
+    sp:mzda "450"^^xsd:decimal ;
+    sp:aktivni true .
+
+zam:3 a sp:Zamestnanec ;
+    foaf:givenName "Klee"@en ;
+    foaf:familyName "Dodoco"@en ;
+    sp:pracovniTelefon <tel:+380.97.514.63.00> ;
+    sp:mzda "50"^^xsd:decimal ;
+    sp:aktivni false .
+
+zam:4 a sp:Zamestnanec ;
+    foaf:givenName "Jan"@cs ;
+    foaf:familyName "Lenivý"@cs ;
+    sp:pracovniTelefon <tel:+420.774.066.035> ;
+    sp:mzda "150"^^xsd:decimal ;
+    sp:aktivni true .
+
+## Organizovani
+
+ud:1 sp:organizovan zam:1,
+                    zam:2.
+
+ud:2 sp:organizovan zam:1,
+                    zam:3.
+
+
+ud:3 sp:organizovan zam:1,
+                    zam:2,
+                    zam:4.
+
+ud:4 sp:organizovan zam:2.
+
+ud:5 sp:organizovan zam:1.
+ud:6 sp:organizovan zam:2.
+
+ud:7 sp:organizovan zam:3.
+
+ud:8 sp:organizovan zam:1, zam:4.
+
+
+### SPORTOVEC ###
+sport:1 a sp:Sportovec ;
+    foaf:givenName "Tomáš"@cs ;
+    foaf:familyName "Strnad"@cs ;
+    sp:osobniTelefon <tel:+420.753.159.789>,
+                     <tel:+420.123.159.690>;
+    sp:opravnen lok:1 , lok:2 .
+
+sport:2 a sp:Sportovec ;
+    foaf:givenName "Jakub"@cs ;
+    foaf:familyName "Hroník"@cs ;
+    sp:osobniTelefon <tel:+420.951.357.456> ;
+    sp:opravnen lok:2 , lok:3 .
+
+sport:3 a sp:Sportovec ;
+    foaf:givenName "Yervand"@en ;
+    foaf:familyName "Arzumanyan"@en ;
+    sp:osobniTelefon <tel:+420.159.753.123> ;
+    sp:opravnen lok:1 .
